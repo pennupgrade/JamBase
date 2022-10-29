@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private LayerMask doorLayer;
     private Rigidbody2D body; //Allows basic forces and physics
-    private Animator anim; 
+    private Animator anim;
+    private SpriteRenderer sprite; 
     private BoxCollider2D boxCollider; 
     private float wallJumpCooldown; 
     private float horizontalInput;
     private bool isHiding;
+    private int movementMultiplier; 
 
 
     //The Awake method is instantiated whenever the game is started
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     
     private void Update(){
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Wall Jump Logic
         if (wallJumpCooldown > 0.2){
-             body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+             body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * movementMultiplier, body.velocity.y);
             if (onWall() && !isGrounded()){
                 body.gravityScale = 1.3f;
                 body.velocity = Vector2.zero;
@@ -75,13 +78,13 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded()){
             body.velocity = new Vector2(body.velocity.x, jumpPower); 
             anim.SetTrigger("jump");
-        } else if(onWall() && !isGrounded()){ 
+        } else if(onWall() && !isGrounded()){ //walljump behavior
             if(horizontalInput == 0){
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 6, 0); 
                 transform.localScale = new Vector2(-Mathf.Sign(transform.localScale.x), transform.localScale.y);
             }
-            else{
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+            else{ //on ground/running.
+                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6) * movementMultiplier;
             }
             wallJumpCooldown = 0; 
         }
@@ -95,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Checks whether the player is in bounds of compartment
-    private bool canHide()
+    private bool inCompBounds()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.up, 0.1f, doorLayer);
         return raycastHit.collider != null;
@@ -104,17 +107,34 @@ public class PlayerMovement : MonoBehaviour
     //Checks whether the player is in bounds of compartment
     private void toggleHidden()
     {
-        if (canHide())
+        if (inCompBounds())
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
-                isHiding = true;
+                isHiding = !isHiding;
             }
-        }
-        else
+        } else
         {
             isHiding = false;
         }
+        
+
+        if (isHiding)
+        {
+            sprite.color = Color.gray;
+            movementMultiplier = 0;
+
+        }
+        else
+        {
+            sprite.color = Color.white;
+            movementMultiplier = 1;
+        }
+
+    }
+    public bool getIsHiding()
+    {
+        return isHiding;
     }
 
     private bool isFalling(){
