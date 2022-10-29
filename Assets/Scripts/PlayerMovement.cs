@@ -31,14 +31,20 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector2(-2, 2);
         }
-        
+
+        Debug.Log("hello 1 " + anim.gameObject.activeSelf);
+
         anim.SetBool("falling", isFalling());
-        Debug.Log("falling: " + isFalling()); 
+        Debug.Log("falling: " + isFalling());
+
+        Debug.Log("hello 1 " + anim.gameObject.activeSelf);
 
         //Set animator parameters
         anim.SetBool("run", horizontalInput != 0);
+        Debug.Log("hello 2" + anim.gameObject.activeSelf);
         anim.SetBool("grounded", isGrounded());
 
+        Debug.Log("hello 3" + anim.gameObject.activeSelf);
         //Wall Jump Logic
         if (wallJumpCooldown > 0.2){
              body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
