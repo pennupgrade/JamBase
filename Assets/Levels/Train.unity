@@ -1878,6 +1878,10 @@ MonoBehaviour:
   - {fileID: 1392329357}
   - {fileID: 2125940423}
   - {fileID: 1930921905}
+  damage: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &357151523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2028,6 +2032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418756386}
   - component: {fileID: 418756387}
+  - component: {fileID: 418756388}
   m_Layer: 9
   m_Name: Flashlight
   m_TagString: Untagged
@@ -2102,6 +2107,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &418756388
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418756385}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &418955786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,6 +4381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7367261654295103472, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
+      propertyPath: nextRoom
+      value: 
+      objectReference: {fileID: 684229072}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
 --- !u!1 &1219241113
@@ -5226,7 +5261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previousRoom: {fileID: 1979745884}
-  nextRoom: {fileID: 0}
+  nextRoom: {fileID: 965414878}
   cam: {fileID: 519420030}
 --- !u!1 &1498202160
 GameObject:
@@ -5771,6 +5806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7367261654295103472, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
+      propertyPath: nextRoom
+      value: 
+      objectReference: {fileID: 939772411}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
 --- !u!1 &1687436237
@@ -7039,7 +7078,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7367261654295103472, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
 --- !u!1 &1930921905 stripped
 GameObject:
@@ -8364,6 +8404,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5264616228802369163, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 418756388}
+    - target: {fileID: 5264616228802369163, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
       propertyPath: attackCooldown
       value: 0
       objectReference: {fileID: 0}
@@ -8378,6 +8422,14 @@ PrefabInstance:
     - target: {fileID: 5264616228802369163, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264616228802369165, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5094822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264616228802369165, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.13411978
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}

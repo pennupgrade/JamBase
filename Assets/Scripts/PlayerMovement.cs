@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         
 
         toggleHidden();
-        Debug.Log(isHiding);
+        //Debug.Log(isHiding);
     }
 
     //Allows the player to jump off the ground/walljump
@@ -155,5 +155,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canAttack(){
         return ((horizontalInput == 0 && isGrounded()) || (!isGrounded() && !onWall()));
     }
+
+    
 
 }
