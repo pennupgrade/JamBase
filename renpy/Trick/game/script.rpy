@@ -159,6 +159,7 @@ label day0:
     hide snake with moveoutbottom
     scene bg cage dark
     $ persistent.day = 1
+    return
 
 label day1:
 
@@ -289,5 +290,85 @@ label day1:
     q "So she's the example?"
     q2 "Is she the petty thief?"
     q "She doesn't look like one though..."
+
+    # TODO: the first time mc is brought to the bird court
+    # should end with bird killing mc
+
+
+
+    
+    $ persistent.day = 1
+    return
+
+label day1b:
+    
+    scene bg courtroom
+    with fade
+
+    # TODO: the second time mc is brought to the bird court
+    # should end with mc successfully sweettalking information out of the bird
+
+    return
+
+label day1c:
+
+    scene bg crimescene
+    with fade
+
+    # TODO: the first time mc arrives at the crimescene with the snake
+    # they are investingating the scene together
+    # should see the bird in the distance
+
+        # choice 1-
+        # should end with the mc framing the bird as the killer
+
+        # choice 2-
+        # should end with the mc & snake approaching bird & recruiting bird
+
+    return
+
+label day2:
+
+    scene bg crimescene
+    with fade
+
+    # TODO: the first time mc arrives at the crimescene with the bird
+    # they are investingating the scene together
+    # should see the snake already at the scene as mc + bird approach
+
+        # choice 1-
+        # should end with the mc framing the snake as the killer of her own father
+
+        # choice 2-
+        # should end with the mc & snake approaching snake & recruiting snake
+
+    return
+
+label day2b:
+
+    scene bg birdnest
+    with fade
+
+    # TODO: the first time mc arrives at the birdnest with the snake
+    # should have the snake break the eggs,
+    # should end with snake & bird killing each other
+
+        # choice 1-
+        # mc chooses to help snake - gets with snake END
+
+        # choice 2-
+        # mc chooses to step back & dies with the battling duo END
+
+    return
+
+label day3:
+
+    scene bg cage light
+
+    # TODO: the last time mc arrives at the cage with the bird
+    # should have the bird kill the snake (after seeing the snake break their eggs_)
+    # should end with bird killing snake
+
+
 
     return
