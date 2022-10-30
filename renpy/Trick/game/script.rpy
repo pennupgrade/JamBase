@@ -164,9 +164,6 @@ label day0:
 
 label day1:
 
-    scene bg cage light with vpunch
-    show zuru happy with moveinleft
-
     scene bg cage dark with hpunch
     show guard angry
 
@@ -347,7 +344,155 @@ label day1:
     return
 
 label day1b:
-    
+
+    scene bg cage dark with hpunch
+    show guard angry
+
+    q "Hey- Wake up!"
+    q "We're here."
+
+    mc "S-squeak?!"
+    "Bruh."
+
+    q "Oh yeah, let me me lift that for you."
+    scene bg cage light with easeinbottom
+    show guard angry at common
+    q "Better?"
+    "{i}(Not again...){/i}"
+    q "They told me mice like you are more fragile than a pile of wooden sti-"
+
+    mc "{i}\"-sticks. Commander Zuru would kill me if you shriveled up in the dark or something.\""
+    mc "{i}\"Haah, you should know how much effort Zuru took to find you though.\""
+
+    q "H-how do you-"
+
+    mc "{i}\"It's tough to snoop around under the gazes of these birds.\""
+
+    mc "Oh by the way: you don't have to bring me that moldy cheese."
+    mc "Also can you get Zuru to come here? I'm tired of waiting."
+
+    q "What did you just call her?! And you literally just woke up!"
+
+    "I really don't want to deal with this right now."
+    mc "I said what I said."
+    mc "Get her or I'll yell for her to come."
+
+    q "I guess..."
+
+    hide guard with moveoutright
+    show zuru happy at moveinleft
+
+    mc "Hey bestie Zuru, before you say anything: let me tell you everything about your dad."
+    s "Tell me WHAT?"
+    "This snake lady better hold her tears better this time. I am at the end of my patience too."
+
+    scene black
+    with fade
+
+    mc "And you know the strolls he takes?"
+    s "Mhm..."
+
+    scene bg cage light with easeinbottom
+    show zuru sad at common
+
+    mc "Holy crap... I'm losing my voice..."
+    "{i}(...and my will to live to be honest.)"
+    s "{i}Hic...{/i}"
+    "Now that I've gotten her guard down, what should I do?"
+
+    menu:
+
+        "{i}(I should use her against Fleur.)":
+
+            mc "Can you give me some time to grief too?"
+            "I would like to take a breath of fresh air."
+
+            s "{i}Hic...{/i} S-sure thing..."
+            
+            "The bird should be here anytime n-"
+
+            q "SCREEEEEEEEECH!"
+            "There she is."
+
+            s "What was-"
+            
+            mc "Zuru! I'll be back!"
+
+            hide zuru with moveoutleft
+
+            "Looking up, it's still those same huge sharp claws {b}AND BEAK{/b} atop the cage."
+            "{i}(I really hope I don't throw up this time.)"
+
+            scene black
+            with fade
+
+            mc "Yo Fleur!"
+            "The cage shook lightly. Sounds like she heard me."
+
+            mc "HEY FLEUUUUUUR~"
+            mc "Before you get so hasty, I need to show you something."
+
+            b "Shut up. You can show it to me at court."
+            "Darn. Okay I'll convince her when we get there."
+
+            "The cage thumped again onto the wooden floor."
+
+            scene bg courtroom
+            with fade
+
+            q "So she's the example?"
+            q2 "Is she the petty thief?"
+            q "She doesn't look like one though..."
+            q2 "Oh my god!! Judge Fleur brought her here~"
+            q "I LOVE YOU FLEUUUUUUUR!"
+
+            show fleur happy at common
+
+            mc "HEY EVERYONE."
+            mc "Before you all ruffle your feathers with some minor things you {i}think{/i} I did."
+            mc "I've just stumbled upon an even more heinous crime: {b}MURDER{/b}."
+
+            q "GAASPPPP."
+            q2 "hUUUH??"
+
+            b "Quiet in the court!"
+            
+            q "A what? Murder? Noooooo."
+            q2 "Not a murder?? Is this on our land too?"
+
+            b "O-okay okay..."
+            "If Fleur isn't caving, I'll keep pushing it."
+            "I'm sure if I stall long enough, perhaps Zuru might even come get me~"
+
+            mc "I can show you the PROOOOOOF."
+
+            q "PROOOOOOOF?!"
+            "This crowd is really excited. They love sure love to heckle."
+            q "Motion to hear this heinous crime?!"
+            q2 "Seconded!"
+
+            "Hah. Gottem."
+
+            b "Fine. Motion to investigate this new, so-called, crime? All in fa-"
+            
+            q "AYYYYYEE~"
+            a2 "AYE!"
+            mc "LET'S GOOOOOOOOO!"
+
+            b "...Looks like that was unanimous. Alright. I will take this tiny mouse... and we will be back."
+
+            jump day2
+
+        "{i}(I can get her to do my bidding.)":
+
+            mc "H-hey, you want to know who is your father's real killer, right?"
+            s "Of course!"
+
+            mc "Can you take me to the crime scene then? We can search for some more evidence."
+            s "Sure, come with me."
+
+            jump day1c
+
     scene bg courtroom
     with fade
 
