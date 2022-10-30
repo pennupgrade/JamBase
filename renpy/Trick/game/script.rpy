@@ -84,6 +84,8 @@ label day0a:
     q "Hey- Wake up!"
     q "We're here."
 
+    play sound "audio/struggling.mp3" 
+
     mc "You b-bastard!"
     "{i}I really want to punch this guy."
     play sound "audio/cover.mp3"
@@ -122,6 +124,7 @@ label day0:
     q "Hey- Wake up!"
     q "We're here."
 
+    play sound "audio/squeak.mp3"
     mc "S-squeak?!"
     "It's so dark! Who's waking me up in the middle of the night?!"
 
@@ -160,6 +163,7 @@ label day0:
     q "Commander Zuru! I'll leave her to you."
     hide guard with moveoutright
     show zuru happy
+    play sound "audio/hiss.mp3"
 
     "So she's the so-called commander calling the shots."
     "I can't tell if she's angry at me, or if she just looks like that normally..."
@@ -218,6 +222,7 @@ label day0:
             mc "..."
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
+            play sound "audio/gulp.mp3"
 
     centered "BAD END REACHED: Down The Hatch"
     centered "If I knew what was going to happen to me, perhaps I could've prevented it."
@@ -234,6 +239,7 @@ label day1:
     q "Hey- Wake up!"
     q "We're here."
 
+    play sound "audio/squeak.mp3"
     mc "S-squeak?!"
     "Huh? Is the afterlife meant to look this dark?"
 
@@ -277,6 +283,7 @@ label day1:
     q "Commander Zuru! I'll leave her to you."
     hide guard with moveoutright
     show zuru happy at center
+    play sound "audio/hiss.mp3"
 
     mc "Hold on- Before you say anything."
     "This stupid move will either get me killed or save my life."
@@ -348,6 +355,7 @@ label day1:
     q "Beware the turbulence: please don't pass out."
     q "We need you to explain what happened as soon as we land."
 
+    play sound "audio/light_thump.mp3"
     "The cage thumped lightly onto a wooden floor and I woke with a start."
 
     scene bg courtroom
@@ -410,6 +418,7 @@ label day1:
     scene black with fade
     
     "And yuuuuup. I guess I am going down the hatch. Yet again."
+    play sound "audio/gulp.mp3"
 
     "Guess this really is farewell once again."
     "Hope her stomach acids end my pain quickly-"
@@ -428,6 +437,7 @@ label day1b:
     q "Hey- Wake up!"
     q "We're here."
 
+    play sound "audio/squeak.mp3"
     mc "S-squeak?!"
     "Bruh."
 
@@ -458,6 +468,7 @@ label day1b:
 
     hide guard with moveoutright
     show zuru happy at common
+    play sound "audio/hiss.mp3"
 
     mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
     s "Tell me WHAT?"
@@ -522,6 +533,7 @@ label day1b:
             b "Shut up. You can show it to me at court."
             "Darn. Okay I'll convince her when we get there."
 
+            play sound "audio/light_thump.mp3"
             "The cage thumped again onto the wooden floor."
 
             scene bg courtroom
@@ -579,6 +591,7 @@ label day1b:
 
             mc "H-hey, you want to know who is your father's real killer, right?"
             show zuru happy at common
+            play sound "audio/hiss.mp3"
             "Zuru perks up."
             s "Of course."
 
@@ -634,6 +647,7 @@ label day1c:
         "Oh, that's her! She was the killer!":
             
             show zuru angry at common
+            play sound "audio/hiss.mp3"
             "I knew it. That rotten bird clan!"
             hide zuru with moveoutright
             "In a flash, Zuru scales a tree lunges towards the figure, weapon at the ready."
@@ -868,6 +882,7 @@ label day2b:
             b "Oh? This little one means something you?"
             b "I'll give you an {i}actual{/i} reason to hate me."
             "A sharp pain erupts from my back. Strength leaves my whole body."
+            play sound "audio/loud_thump.mp3"
             s "You'll pay for that!"
             "Bleeding out, I watch two warriors savagely fight over a misunderstanding that I caused."
             
@@ -886,9 +901,15 @@ label day2b:
             "Zuru, in the midst of battle notices your courage."
             s "{i}Though not related by blood, She is risking her life for my father's sake all the same... she's such a good person...{/i}"
             "She feels a warm energy swell up inside of her, and summons new strength."
+            
             "She manages to overpower Fleur, knocking her to the ground. Coincidentally, right at me feet."
+            play sound "audio/loud_thump.mp3"
+            
             mc "Jesus, I can not hold this rock any longer...!"
+            play sound "audio/caw.mp3"
             "I drop the rock. Coincidentally, right onto Fleur's head. With a squawk, she stops moving."
+            play sound "audio/loud_thump.mp3"
+
             mc "Oh my god."
 
             s "I..."
@@ -1142,6 +1163,8 @@ label day3b:
             scene black with fade
             show guard evil with moveinbottom
             "Eh not my best work"
+
+            play sound "audio/rattle.mp3"
 
             scene bg crimescene with fade
             stop music fadeout 1.0
