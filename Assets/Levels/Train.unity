@@ -5122,7 +5122,7 @@ MonoBehaviour:
   speed: 2
   idleDuration: 1
   anim: {fileID: 641666856}
-  targetLight: {fileID: 0}
+  targetLight: {fileID: 1673143859}
 --- !u!4 &1363822160
 Transform:
   m_ObjectHideFlags: 0
@@ -5827,6 +5827,11 @@ PrefabInstance:
       objectReference: {fileID: 939772411}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
+--- !u!1 &1673143859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7367261653543399180, guid: 05d0b302c398a42938e671ef0de91d72, type: 3}
+  m_PrefabInstance: {fileID: 1673143858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687436237
 GameObject:
   m_ObjectHideFlags: 0

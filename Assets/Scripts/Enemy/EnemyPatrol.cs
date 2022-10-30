@@ -29,6 +29,7 @@ public class EnemyPatrol : MonoBehaviour
 
 
     private void Awake(){
+        isSeeking = false; 
         initScale = enemy.localScale;
     }
 
@@ -60,18 +61,21 @@ public class EnemyPatrol : MonoBehaviour
         }
         else
         {
-            while (enemy.position.x != targetLight.GetComponent<Transform>().position.x)
-            {
+            if (enemy.position.x <= targetLight.GetComponent<Transform>().position.x + 0.5 && enemy.position.x > targetLight.GetComponent<Transform>().position.x - 0.5) {
+                    Debug.Log("Turn off");
+                    this.gameObject.SetActive(false);
+            } else {
+                if (targetLight.GetComponent<Transform>().position.x > enemy.position.x)
+                    {
+                        this.MoveInDirection(1);
+                    }
+                    else
+                    {
+                        this.MoveInDirection(-1);
+                    }
+                }
 
-            }
-            if (targetLight.GetComponent<Transform>().position.x < enemy.position.x)
-            {
-                this.MoveInDirection(-1);
-            }
-            else
-            {
-                this.MoveInDirection(1);
-            }
+             
         }
 
 
@@ -104,7 +108,6 @@ public class EnemyPatrol : MonoBehaviour
     {
         Debug.Log("Seekin babyyy");
         isSeeking = true;
-        anim.SetBool("moving", true);
         targetLight = l;
     }
 
