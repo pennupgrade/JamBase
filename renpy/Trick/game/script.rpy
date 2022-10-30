@@ -12,13 +12,7 @@ transform common (x=960):
         ypos 1.00
         zoom 0.95 alpha 0.00 
         xcenter x yoffset 0 
-        easein .25 zoom 0.90 alpha 1.00
-    on replace:
-        alpha 1.00 
-        parallel:
-            easein .25 xcenter x zoom 0.8 
-        parallel:
-            easein .15 yoffset 0 ypos 1.03 
+        easein .25 zoom 1.00 alpha 1.00
 
 transform centerleft:
     common(640)
@@ -162,7 +156,7 @@ label day0:
     s "Tsk."
     q "Commander Zuru! I'll leave her to you."
     hide guard with moveoutright
-    show zuru happy at common
+    show zuru happy
 
     "So she's the so-called commander calling the shots."
     "I can't tell if she's angry at me, or if she just looks like that normally..."
@@ -464,7 +458,7 @@ label day1b:
     show zuru sad at common
 
     mc "Holy crap... I'm losing my voice..."
-        "{i}(...and my will to live to be honest.){/I}"
+    "{i}(...and my will to live to be honest.){/i}"
     s "{i}Hic...{/i} W-well... with this much specific information about my father I know you at least aren't completely lying through your teeth."
     mc "I would never. So, uh... Can you let me out."
 

@@ -2,25 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 3: unexpected EOF while parsing
-    False;
-          ^
-
-File "game/script.rpy", line 4: unexpected EOF while parsing
-    False;
-          ^
-
-File "game/script.rpy", line 5: unexpected EOF while parsing
-    False;
-          ^
-
-File "game/script.rpy", line 6: unexpected EOF while parsing
-    False;
-          ^
-
-File "game/script.rpy", line 7: unexpected EOF while parsing
-    False;
-          ^
+File "game/script.rpy", line 467: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    "{i}(...and my will to live to be honest.){/i}"
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Oct 30 02:09:26 2022
+Sun Oct 30 02:36:22 2022
