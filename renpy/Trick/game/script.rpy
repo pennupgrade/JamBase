@@ -31,7 +31,7 @@ init python:
 
     # Characters
     s = Character("Zuru",  color="#c8ffc8")
-    b = Character("Bird", color="#c8f5ff")
+    b = Character("Fleur", color="#c8f5ff")
     mc = Character('Me', color="#c8c8ff")
     q = Character('???', color="#babac2")
     q2 = Character('???', color="#88888f")
@@ -212,7 +212,7 @@ label day1:
     show zuru happy at centerleft
 
     s "Tsk."
-    q "Commander Snake! I'll leave her to you."
+    q "Commander Zuru! I'll leave her to you."
     hide guard with moveoutright
     show zuru happy at center
 
@@ -291,13 +291,15 @@ label day1:
     q "So she's the example?"
     q2 "Is she the petty thief?"
     q "She doesn't look like one though..."
+    q2 "Oh my god!! Judge Fleur brought her here~"
+    q "I LOVE YOU FLEUUUUUUUR!"
     "Have I been saved?! My heart was thumping with adrenaline but now I'm finally calming down again."
 
-    show bird happy at common
+    show fleur happy at common
 
     b "Quiet in the court! We have an important matter to discuss."
     b "Our esteemed, or shall I say long awaited, guest has finally arrived."
-    "Oh- I feel honored! She really went through all the effort of bringing me here from the snake's grasps."
+    "Oh- I feel honored! She really went through all the effort of bringing me here from that snake's grasps."
     "She looks so nice <3"
 
     b "We are all gathered here today to trial her innocence."
@@ -325,7 +327,7 @@ label day1:
 
     b "Looks like we have come to an overwhelming, if not unanimous decision:"
     b "I will now deliver the punishment."
-    "I look over at the bird in fear and suddenly, she looks back and our eyes meet."
+    "I look over at Fleur in fear and suddenly, she looks back and our eyes meet."
     
     mc "Uh oh."
     "I don't like that look."
@@ -335,7 +337,7 @@ label day1:
     "Yup. Against all expectations, I'm getting picked up again-"
     "And yuuuuup. I guess I am going down the hatch. Yet again."
 
-    hide bird with moveoutbottom
+    hide fleur with moveoutbottom
     scene bg cage dark
 
     "Guess this really is farewell once again."
@@ -369,7 +371,7 @@ label day1c:
         # choice 2-
         # should end with the mc & snake approaching bird & recruiting bird
 
-    show snake happy with moveinleft
+    show zuru happy with moveinleft
 
     s "Well, here we are. Let's do this quickly, I'd... rather not spend too much time here."
 
@@ -393,38 +395,38 @@ label day1c:
 
         "Oh, that's her! She was the killer!":
             
-            show snake angry at common
+            show zuru angry at common
             "I knew it. That rotten bird clan!"
-            hide snake with moveoutright
-            "Snake lunges towards the figure, weapon at the ready."
+            hide zuru with moveoutright
+            "Zuru lunges towards the figure, weapon at the ready."
 
-            show snake angry
-            show bird happy
+            show zuru angry
+            show fleur happy
 
-            q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes--"
-            "Snake aims a devastating blow at the girl's head"
+            q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes--"
+            "Zuru aims a devastating blow at the girl's head"
             s "I'll turn you into poultry!"
             b: "Shown your true colors, huh? Very well!"
-            "Bird draws her weapon, and the two engage in combat."
+            "Fleur draws her weapon, and the two engage in combat."
             # jump to something
 
         "I'm having trouble remembering... maybe that girl over there knows something?":
 
             s "...Very well then."
-            hide snake with moveoutright
-            "As Snake walks off, I hear her mutter something about hitting me a little too hard."
+            hide zuru with moveoutright
+            "As Zuru walks off, I hear her mutter something about hitting me a little too hard."
 
-            show bird happy
-            "As we get closer, I see Snake grimace."
+            show fleur happy
+            "As we get closer, I see Zuru grimace."
 
-            q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes."
-            s "I've no time for your banter for your banter, Bird."
+            q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes."
+            s "I've no time for your banter for your banter, Fleur."
 
-            "I lock eyes with Bird, and her face hardens for just a second."
+            "I lock eyes with Fleur, and her face hardens for just a second."
             "Oh, rats. I think she recognizes me."
 
             b "Why, I had no idea you were in good company with fugitives. Fitting."
-            mc "Yeah, you'd never expect Commander Snake to commit tax fraud, huh?"
+            mc "Yeah, you'd never expect Commander Zuru to commit tax fraud, huh?"
             s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge my father."
             s "Or rather she's a 'key witness in an ongoing murder case' in your bureaucratic terms."
             b "I never figured you one to even know words that long."
