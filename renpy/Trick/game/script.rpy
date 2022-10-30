@@ -21,9 +21,6 @@ transform centerright:
 
 image black = "#000000"
 
-# GUI
-define gui.text_font = "gui/font/OpenSans-Medium.ttf"
-
 # Variables
 init python:
 
@@ -182,7 +179,7 @@ label day0:
     
     s "Lies. My guard clearly found you scurrying off from the fresh crime scene." 
     s "We even located fresh footsteps of yours near his location of death."
-    s "You think you can get by saying you know nothing straight to my face and saying you know nothing about {color=#4eafc7}{b}my father's death{/b}{/color}?" 
+    s "You think you can get by saying you know nothing straight to my face and saying you know nothing about {color=#4eafc7}my father's death{/color}?" 
 
     mc "Your father's death? I don't even know him!"
     "So her dad died? That explains her temper..."
@@ -197,7 +194,7 @@ label day0:
     
     s "So you accept your fate."
     s "My patience has run thin."
-    s "I will ask one last time: {b}how did you do it{/b}?"
+    s "I will ask one last time: {color=#4eafc7}how did you do it?{/color}"
 
     menu:
 
@@ -369,7 +366,7 @@ label day1:
 
     mc "U-um can I say that I am grateful for you saving me but I'm not into th-"
 
-    b "Quiet. Motion to speak {b}denied{/b}."
+    b "Quiet. Motion to speak {i}denied{/i}."
     "Ouch."
     b "As I was saying, all in favor for making her an example here and now, say AYE."
 
@@ -491,7 +488,7 @@ label day1b:
 
             hide zuru with moveoutleft
 
-            "Looking up, it's still those same huge sharp claws {b}AND BEAK{/b} atop the cage."
+            "Looking up, it's still those same huge sharp claws {i}AND BEAK{/i} atop the cage."
             "{i}(I really hope I don't throw up this time.)"
 
             scene black
@@ -521,7 +518,7 @@ label day1b:
 
             mc "HEY EVERYONE."
             mc "Before you all ruffle your feathers with some minor things you {i}think{/i} I did."
-            mc "I've just stumbled upon an even more heinous crime: {b}MURDER{/b}."
+            mc "I've just stumbled upon an even more heinous crime: {i}MURDER{/i}."
 
             q "GAASPPPP."
             q2 "hUUUH??"
