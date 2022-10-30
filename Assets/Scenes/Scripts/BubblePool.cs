@@ -16,6 +16,7 @@ public class BubblePool : MonoBehaviour
 
     private List<GameObject> bubbles;
     private BossScript boss;
+    private bool clear = false;
 
     private void Awake()
     {
@@ -32,7 +33,12 @@ public class BubblePool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (boss.getIsEnraged() && !clear)
+        {
+            clear = true;
+            bubbles = new List<GameObject>();
+            notEnoughBubblesinPool = true;
+        }
     }
 
     public GameObject getBubble()
