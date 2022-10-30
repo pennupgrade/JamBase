@@ -1,10 +1,10 @@
-﻿# Set Up
+# Set Up
 default persistent.lastending = ""
-default persistent.badendreached = False
-default persistent.zuruendreached = False
-default persistent.fleurendreached = False
-default persistent.haremendreached = False
-default persistent.pairendreached = False
+default persistent.badendreached = False;
+default persistent.zuruendreached = False;
+default persistent.fleurendreached = False;
+default persistent.haremendreached = False;
+default persistent.pairendreached = False;
 
 transform common (x=960):
     yanchor 1.0 subpixel True 
@@ -26,6 +26,9 @@ transform centerright:
     common(1280)
 
 image black = "#000000"
+
+# GUI
+define gui.text_font = "gui/font/OpenSans-Medium.ttf"
 
 # Variables
 init python:
@@ -55,62 +58,21 @@ label start:
 
         jump day1b
 
-    elif persistent.lastending == "4" or persistent.lastending == "5" or persistent.lastending == "6":
+    elif persistent.lastending == "4" or persistent.lastending == "5": # reached BAD END or GOOD END
 
-        if persistent.lastending == "4": # BAD END
+        if persistent.lastending == "4":
             
             centered "That last death was much too brutal. I should've known how to prevent it."
             centered "I'll do it right this time around."
 
-        elif persistent.lastending == "5": # GOOD END
+        elif persistent.lastending == "5":
 
-            if persistent.haremendreached or persistent.pairendreached:
-                centered "With the story wrapped up, I wonder what else would've happened if I made different choices."
-            else:
-                centered "Perhaps I ought to find out who really killed Zuru's father."
+            # ?
 
-        elif persistent.lastending == "6": # TRUE END
-
-            centered "With the story wrapped up, I wonder what else would've happened if I made different choices."
-
-        jump day0a
+        # jump -> start of a new day (try to get a good end)
 
     return
 
-label day0a:
-
-    scene bg cage dark with hpunch
-    show guard angry
-
-    q "Hey- Wake up!"
-    q "We're here."
-
-    mc "Y-you bastard..."
-    "I shake the cage vigorously and the covering slides off."
-
-    scene bg cage light with fade
-    show guard angry at common
-    
-    q "What?"
-
-    mc "Haah... nevermind. Let's just get on with the story."
-    mc "I'm trying to reach the other endings right now."
-
-    menu:
-
-        "I'm going to get an enraged Zuru to break some eggs!" if not persistent.zuruendreached or not persistent.badendreached:
-
-            "...and maybe get her to fall in love with me~"
-            jump day2b
-
-        "I ought to get Fleur to take care of Zuru for me." if not persistent.fleurendreached:
-
-            jump day3
-
-        "I still haven't found out who killed Zuru's father..." if not persistent.haremendreached or not persistent.pairendreached:
-
-            jump day3b
-        
 label day0:
 
     scene bg cage dark with hpunch
@@ -130,7 +92,7 @@ label day0:
     "Owwww, that's bright... what time is it? How long did I sleep..."
     q "They told me mice like you are more fragile than a pile of wooden sticks- Commander Zuru would kill me if you shriveled up in the dark or something."
 
-    "I need to find out how I got here."
+    "A snake? I need to find out how I got here."
     "Last I remember, I was going diving into a dumpster to rest for the night after completing my daily goal of looting from the birds' grain stash."
     "This doesn't make sense though: I was just in bird territory, how did this snake get here?"
 
@@ -145,7 +107,7 @@ label day0:
     show guard happy at centerright
 
     q "Oh here: brought you some cheese."
-    "T-that looks nasty. Did they peel this m-moldy cheese off some dirty sidewalk?"
+    "T-that looks nasty. They did peel this m-moldy cheese off some dirty sidewalk?"
 
     q "You should be so grateful that Commander Zuru granted you what your kind enjoys for a last meal."
     q "You ought to get some meat on those bones before we- oh!"
@@ -195,7 +157,7 @@ label day0:
     "She looks like she won't budge at all."
     
     s "So you accept your fate."
-    s "My patience has run thin."
+    s "My patience have run thin."
     s "I will ask one last time: {b}how did you do it{/b}?"
 
     menu:
@@ -206,7 +168,7 @@ label day0:
             s "Say farewell as I make you my dinner."
             
             "Her what now?"
-            "Scared, I backed to the edge of the cage, but I can't avoid her snakey bite."
+            "Scared, I backed to the edge of the cage, but I couldn't avoid her snakey bite."
 
             hide zuru with moveoutbottom
             scene black with fade
@@ -215,9 +177,6 @@ label day0:
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
 
-    centered "BAD END REACHED: Down The Hatch"
-    centered "Perhaps this would've been different had I known what was going to happen."
-    centered "I would do anything not to relive this day."
     $ persistent.lastending = "0"
     return
 
@@ -261,7 +220,7 @@ label day1:
     "Worth a try."
 
     q "You can only ask her and hope."
-    q "I can't wait to see how that would turn out, haha."
+    q "I can't wait to see how that would turn out haha."
     "Looks like I had no chance with this puny of a guard."
 
     show guard happy at centerright
@@ -298,7 +257,7 @@ label day1:
     with fade
 
     mc "I was just as close as you were to him."
-    mc "We would often take strolls to the city."
+    mc "We would often take strolls to the city often."
 
     s "You mean that forest path near his place? I remember when he would take me and his other students there too."
 
@@ -306,22 +265,21 @@ label day1:
 
     "Bingo! I hit the it on the mark."
     "I'm sure it has been least an hour since I started talking..."
-    "I'm going to keep dragging this snake along with me until nightfall, even if I die."
+    "I going to keep dragging this snake along with me until nightfall, even if I die."
 
     scene bg cage light with easeinbottom
     show zuru sad at center
 
     s "I do rather miss him..."
-    "Zuru turned her face away from you, trying to hide her very obvious tears"
-    mc "My condolences... I also remember when he would bake for his students."
+    mc "Condolences... I also remember when he would bake for his students."
 
     s "Did he?"
-    mc "Y-yeah! He started just two weeks ago. He wanted to keep it a secret from you and surprise you."
+    mc "Y-yeah! He started just two weeks ago, he wanted to keep it a secret from you and surprise you."
     mc "But I guess he never got the chance."
     "P-phew, saved myself there. Making up this much backstory takes up so much effort... I'm sweating."
 
     s "I... guess..."
-    s "You were so close to him, so you must know who killed him, right?"
+    s "You were so close to him so you must know who killed him, right?"
     s "Also... can't you also be-?"
 
     q "SCREEEEEEEEECH!"
@@ -364,10 +322,10 @@ label day1:
     "Oh wow. She's actually accusing me of something I did do this time."
     "Haha... H-how do I get out of it this time."
 
-    b "We must make her an example that all fiends who dare trespass our clan's lands are punished accordingly."
+    b "We must make her an example for all future fiends that dare trespass our clan's lands are punished as example."
     "W-wait they're gonna punish me?"
 
-    mc "U-um can I say that I am grateful for you saving me but I'm not into th-"
+    mc "U-um can say that I am grateful for you saving me but I'm not into th-"
 
     b "Quiet. Motion to speak {b}denied{/b}."
     "Ouch."
@@ -441,8 +399,8 @@ label day1b:
     q "I guess..."
 
     hide guard with moveoutright
-    show zuru happy at common
-    
+    show zuru happy at moveinleft
+
     mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
     s "Tell me WHAT?"
     "This snake lady better hold her tears better this time. I am at the end of my patience too."
@@ -457,29 +415,20 @@ label day1b:
     show zuru sad at common
 
     mc "Holy crap... I'm losing my voice..."
-    "{i}(...and my will to live to be honest.){/I}"
-    s "{i}Hic...{/i} W-well... with this much specific information about my father I know you at least aren't completely lying through your teeth."
-    mc "I would never. So, uh... Can you let me out."
-
-    "Zuru's eyes grow stern."
-    s "I... cannot do that. You are under our custody."
-
-    "Whoops. Overstepped a little."
-    "Rats. I've gotten her guard down, but not quite enough. What should I do?"
+    "{i}(...and my will to live to be honest.)"
+    s "{i}Hic...{/i}"
+    "Now that I've gotten her guard down, what should I do?"
 
     menu:
 
         "{i}(I should use her against Fleur.)":
 
-            "Right, that bird should be coming soon. Just a few more stories about old man stuff."
-            mc "Well, I'll tell you a little more about your father then."
-            "Another hour of "
+            mc "Can you give me some time to grief too?"
+            "I would like to take a breath of fresh air."
 
-            mc "(hoarse) And then his skin shed like crazy and he went 'Woah! I'm peeling like a banana to peel on you!'"
-            s "I... did not know my father to have such a sense of humor. A man of many sides, it appears."
-
-            mc "Yeah... for... sure..."
-            "God, the bird should be here anytime n-"
+            s "{i}Hic...{/i} S-sure thing..."
+            
+            "The bird should be here anytime n-"
 
             q "SCREEEEEEEEECH!"
             "There she is."
@@ -553,15 +502,13 @@ label day1b:
 
             jump day2
 
-        "{i}(I can press a little more!)":
+        "{i}(I can get her to do my bidding.)":
 
             mc "H-hey, you want to know who is your father's real killer, right?"
-            "Zuru perks up."
-            s "Of course."
+            s "Of course!"
 
-            mc "If you take me to the crime scene, I can point out which way they went."
-            "Zuru ponders for a moment."
-            s "Fine. Come with me."
+            mc "Can you take me to the crime scene then? We can search for some more evidence."
+            s "Sure, come with me."
 
             jump day1c
 
@@ -590,25 +537,23 @@ label day1c:
 
     show zuru happy with moveinleft
 
-    "While walking, Zuru has clearly composed herself and is back in {s}girlboss{/s} commander mode."
     s "Well, here we are. Let's do this quickly, I'd... rather not spend too much time here."
 
     mc "Yes, yes, he was a great man. I remembered his blueberry muffins so fondly."
-    
-    s "...Right."
-    "Looks like she still doesn't quite buy that one."
 
+    s "...Right."
     s "Well, out with it then. Which way did the culprit go?"
 
-    "Yeesh, right to business. Uh, "
+    "Yeesh, right to business."
     mc "Hm... I'm, uh, having trouble remembering."
     mc "You know, because I was knocked out and captured. Thanks for that."
     
     s "{i}Sighs{/i} Out with it."
     "I need something to work with here..."
+
+    mc "Uh, so there was this girl, right? And, uh..."
     
-    "Out of the corner of your eye, you see something-- someone, flying through the trees."
-    "That's right, Fleur!"
+    "In the distance, I see someone else approaching the crime scene."
 
     menu:
 
@@ -617,17 +562,17 @@ label day1c:
             show zuru angry at common
             "I knew it. That rotten bird clan!"
             hide zuru with moveoutright
-            "In a flash, Zuru scales a tree lunges towards the figure, weapon at the ready."
+            "Zuru lunges towards the figure, weapon at the ready."
 
             show zuru angry
             show fleur happy
 
             q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes--"
-            "Zuru aims a devastating blow at the bird's head."
+            "Zuru aims a devastating blow at the girl's head"
             q "Shown your true colors, huh?"
             s "Shut up Fleur! I'll turn you into poultry!"
             b "And I'll turn you in to law enforcement! See you in court!"
-            "Fleur flies high, out of the reach of the trees, and back towards the clear"
+            "Fleur unfurls her wings and flies off."
             s "Argh!"
             "Panting, I finally catch up to Zuru."
             mc "Woah, you alright there?"
@@ -639,31 +584,25 @@ label day1c:
 
             jump day2b
 
-        "I'm having trouble remembering... maybe that bird up there might know something?":
+        "I'm having trouble remembering... maybe that girl over there knows something?":
 
-            mc "I mean she must have a pretty good view of things."
             s "...Very well then."
             hide zuru with moveoutright
-            "As Zuru walks off, I hear her mutter something about the guards roughing me up a little too hard."
-            "She takes a big breath"
-            s "EXCUSE ME! WE HAVE A FEW QUESTIONS!"
-
-            "The bird is clearly startled, and flies into a tree."
-            mc "Ouch. That probably hurt."
+            "As Zuru walks off, I hear her mutter something about hitting me a little too hard."
 
             show fleur happy at centerleft
             show zuru happy at centerright
-            "As the bird lands, Zuru grimaces-- seems they know each other."
+            "As we get closer, I see Zuru grimace."
 
-            b "Ah, Commander Zuru. Such an ugly voice could only be yours."
-            s "I've no time for your banter, Fleur."
+            q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes."
+            s "I've no time for your banter for your banter, Fleur."
 
             "I lock eyes with Fleur, and her face hardens for just a second."
             "Oh, rats. I think she recognizes me."
 
             b "Why, I had no idea you were in good company with fugitives. Fitting."
             mc "Yeah, you'd never expect Commander Zuru to commit tax fraud, huh?"
-            s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge the murder my father."
+            s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge my father."
             s "Or rather she's a 'key witness in an ongoing murder case' in your bureaucratic terms."
             b "I never figured you one to even know words that long."
             s "And I never figured you one to obstruct justice. Cut the chatter. Did you see anything here?"
@@ -731,8 +670,7 @@ label day2:
 
         # choice 2-
         # should end with the mc & snake approaching snake & recruiting snake
-        "Look how she weeps":
-
+        "Look how she weeps"
             b "She does not weep? I see no tears in her eyes."
             mc "Peer beyond her mask of stone"
             mc "..."
@@ -774,7 +712,6 @@ label day2:
             mc "We offer aid not because we believe you unfit. We seek to aid because this is a matter of Justice."
             b "What she said."
             s "Very well. Then I know just the place to check out."
-
             jump day3b
 
     return
@@ -840,7 +777,7 @@ label day2b:
             b "I'll give you an {i}actual{/i} reason to hate me."
             "A sharp pain erupts from my back. Strength leaves my whole body."
             s "You'll pay for that!"
-            "Bleeding out, I watch two warriors savagely fight over a misunderstanding that I caused."
+            "Bleeding out, you watch two warriors savagely fight over a misunderstanding."
             
             scene black
             with fade
@@ -853,7 +790,7 @@ label day2b:
 
             "Frantically looking around the area, I try to find anything heavy enough to deal some damage."
             "I settle on a rock about the size of my head."
-            mc "What am I even doing? I'm no fighter. I was just not five minutes ago complicit in the murder of children. I am not a good person"
+            mc "What am I even doing? I'm no fighter. The most fighting I've done in my life is killing unborn children for a chance at saving myself. I am not a good person"
             "Zuru, in the midst of battle notices your courage."
             s "{i}Though not related by blood, She is risking her life for my father's sake all the same... she's such a good person...{/i}"
             "She feels a warm energy swell up inside of her, and summons new strength."
@@ -880,7 +817,7 @@ label day2b:
             scene black
             with fade
 
-            centered "GOOD END REACHED: SSSSSSlipped Away With Zuru"
+            centered "GOOD END REACHED: SSSSSSLIPPED AWAY WITH ZURU"
             $ persistent.lastending = "5"
             $ persistent.zuruendreached = True
 
@@ -893,6 +830,94 @@ label day3:
     # TODO: the last time mc arrives at the cage with the bird
     # should have the bird kill the snake (after seeing the snake break their eggs_)
     # should end with bird killing snake
+    b "Where is this?"
+    mc "The lair of the monster."
+    b "How can be so sure?"
+    mc "I..."
+    b "?"
+    mc "I shudder to recount what she did to me here."
+    b "Oh my. What unspeakable things befell you here?"
+    mc "I dare not speak of it."
+    b "..."
+    #Sad birb face
+    mc "What is that look? Upon your face?"
+    b "I just want to know what injustice has wrought."
+    mc "That's what you say. But I see it in your eyes."
+    b "M-m-my eyes?"
+    #Blush birb
+    mc "Behind your drive for justice, a fiery compassion burns even more brightly."
+    b "W-what"
+    mc "I see now."
+    b "What's going on here."
+    mc "You ask not just because you stand for justice..."
+    mc "You ask because you care."
+    b "I..."
+    mc "Your eyes..."
+    mc "They..."
+    mc "Emanate with warmth"
+    b "Wh-where's all of this coming fro-"
+    mc "You are...simply too radiant"
+    #Birb leaves
+    b "Where are you going!"
+    "I think she took the bait"
+    #Snek appears on screen
+    s "You!"
+    mc "..."
+    s "What happened? Last I saw you were swept up by one of the bird clan. Are you alright?"
+    mc "..."
+    s "Why aren't you saying anything?"
+    mc "..."
+    s "No matter. Come quickly, we must continue discussing the whereabouts of my father's killer."
+    mc "8 hours, 45 minutes, and 32 second."
+    s "I beg your pardon?"
+    mc "That's how long I remained concious while being digested by your stomach acids."
+    s "What?"
+    mc "I wouldn't expect you to remember. But you killed me."
+    s "What? I did no such thing."
+    mc "But you would have."
+    b "Hellooooo?"
+    s "Who's that?"
+    mc "A friend."
+    b "Are you there? Mouse?"
+    s "Is she sympathetic to our cause?"
+    mc "You would have let me rot in a pool of my own flesh."
+    "I hear Fleur's footsteps grow louder as they approach."
+    mc "Writhing in pain, dissolving in a puddle of mush just for providing an incorrect answer to an impossible question."
+    s "What?"
+    mc "Goodbye Zuru."
+    s "What are you talking about-"
+    "I begin to scream at the top of my lungs."
+    mc "FLEUR!!!!! RUN!!!!!!"
+    #Snek shock
+    s "What are you-"
+    mc "THE SERPENTINE MAIDEN! NAY! THE MONSTER! THE DEVIL"
+    b "Mouse?!"
+    "Fleur's footfalls hasten"
+    mc "PLEASE! RUN! I MAY GO THE WAY HER FATHER WENT, BUT YOU CAN STILL SAVE YOURSELF"
+    s "My father? What are you-"
+    #Shocked birb appear left
+    mc "FLEUR! STAY BACK!"
+    b "MOUSE! What has the monster done to you?!"
+    mc "JUST RUN"
+    #Birb murder mode activated
+    b "Put."
+    b "Her."
+    b "Down."
+    "Zuru looks at me in shock and despair. I sneak a grin before turning to my faux tears."
+    b "YOU WILL DO NO FURTHER HARM ANYMORE INNOCENTS"
+    "Zuru meets my gaze. She's crying."
+    s "Why you-"
+    "There is a flash; the sound of a fleshy sploch. When I open my eyes, Zuru's head lies at my feet."
+    b "Mouse."
+    mc "Y-you didn't leave me."
+    #Happy birb
+    b "I am but a humble messenger for the hammer of justice"
+    scene black
+    with fade
+    
+    #Whichever ending this
+
+    # b "KISS ME" mAssive  makeout scene xp
 
     return
 
@@ -940,7 +965,7 @@ label day3b:
     with fade
 
     centered "GOOD END REACHED: IN A MOUSE'S NATURE"
-    $ persistent.lastending = "6"
+    $ persistent.lastending = "7"
     $ persistent.pairendreached = True
 
     return
