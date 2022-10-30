@@ -223,7 +223,7 @@ label day0:
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
             play sound "audio/gulp.mp3"
-
+    play sound "audio/gong.mp3"
     centered "BAD END REACHED: Down The Hatch"
     centered "If I knew what was going to happen to me, perhaps I could've prevented it."
     $ persistent.lastending = "0"
@@ -422,7 +422,7 @@ label day1:
 
     "Guess this really is farewell once again."
     "Hope her stomach acids end my pain quickly-"
-
+    play sound "audio/gong.mp3"
     centered "BAD END REACHED: Out of the Frying Pan, Into the Fire"
     $ persistent.lastending = "1"
     return
@@ -888,7 +888,7 @@ label day2b:
             
             scene black
             with fade
-
+            play sound "audio/gong.mp3"
             centered "BAD END REACHED: Mass Manslaughter"
             $ persistent.lastending = "4"
             $ persistent.badendreached = True
@@ -929,7 +929,7 @@ label day2b:
 
             scene black
             with fade
-
+            play sound "audio/gong.mp3"
             centered "GOOD END REACHED: SSSSSSSlipped Away With Zuru"
             $ persistent.lastending = "5"
             $ persistent.zuruendreached = True
@@ -1048,6 +1048,7 @@ label day3:
     scene black
     with fade
 
+    play sound "audio/gong.mp3"
     centered "GOOD END REACHED: Courted Fleur From The Court"
     $ persistent.lastending = "5"
     $ persistent.fleurendreached = True
@@ -1187,7 +1188,7 @@ label day3b:
             mc "No...thank you."
 
             scene black with fade
-
+            play sound "audio/gong.mp3"
             centered "GOOD END REACHED: In a Mouse's Nature"
             $ persistent.lastending = "6"
             $ persistent.pairendreached = True
@@ -1264,7 +1265,7 @@ label day3b:
             "Together, we take each other's hands, and march off into the sunset, filled with determination."
 
             scene black with fade
-
+            play sound "audio/gong.mp3"
             centered "GOOD END REACHED: Kiss Kiss Fall In Love"
             $ persistent.lastending = "6"
             $ persistent.haremendreached = True
