@@ -97,8 +97,8 @@ label day0a:
 
     q "What?"
 
-    mc "Let's cut to the chase."
-    mc "I'm just looking for the other endings I want to reach~"
+    mc "Haah... nevermind. Let's just get on with the story."
+    mc "I'm trying to reach the other endings right now."
 
     q "S-so what are you planning on doing?"
 
