@@ -999,7 +999,7 @@ label day3:
     scene black
     with fade
 
-    centered "GOOD END REACHED: Courted Fleur"
+    centered "GOOD END REACHED: Courted Fleur From The Court"
     $ persistent.lastending = "5"
     $ persistent.fleurendreached = True
 
