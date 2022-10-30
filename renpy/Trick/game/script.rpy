@@ -990,45 +990,166 @@ label day3b:
     # you can either push them to get together (pairing end)
     # and/or get them to fall in love with you (harem end)
 
-    scene black
-    with fade
+    "Clattering and banging sound from around as Fleur and Zuru return from their directions, searching for evidence."
 
-    "Clattering and banging sounded from around as Fleur and Zuru headed off in their directions, searching for evidence."
+    scene bg crimescene with fade
+    show fleur happy at centerleft
+    show zuru neutral at centerright
 
     mc "Have you two found anything of worth?"
 
     s "Not yet. Nature is too good at hiding things."
     b "Almost like a treasure trove hidden for you to discover~!"
-
     s "Ugh."
-    
-    scene bg crimescene with fade
-
-    "It's been awhile since we split up. We planned to reconvene about now-ish?"
-
-    show fleur happy at centerleft
-    show zuru happy at centerright
-
-    mc "Updates?"
-    b "Actually- Searching reminded me."
-    b "When I visited your father's residence some time ago, my birds picked up a journal that belonged to Zuru's late father."
+    b "Well at least your color looks better"
+    s "Excuse me?"
+    b "Your scales a so much more supple than before."
+    #Smile Birb
+    s "You're imagining things."
+    "Observed."
+    mc "Come on you two. Updates?"
+    b "Actually...Searching reminded me."
+    b "When I visited your residence some time ago, my birds picked up a journal that belonged to Zuru's late father."
 
     show zuru sad at centerright
     s "My father's journals?"
-    b "The piece has been " # something something - at the birdnest ????? they pick up the piece of evidence and FIND THE KILLER LETS GOOOOOOOOOOOOOOO
+
+    b "I could send for them."
+    #Smile snek
+    s "You can?"
+    b "Of course! I can emit a call at a high frequency to summon them"
+    s "Wow. That's pretty amazing. Please do so! Those journals may have something important in them."
+    b "Gladly. Hear, please allow me"
+    "Fleur tenderly cups Zuru's ears. I watch silently for a moment before realizing what is to come."
+    b "SCRAAAAAWWWWW"
+    "The air erupts into daggers. I clutch at my mouse ears in agony."
+    mc "HEY! A WARNING WOULD BE NICE NEXT TIME!"
+    #neutral birb
+    b "Oh right you're here too"
+    "Also oberserved. Less amicably."
+    s "How long until your birds arrive?"
+    b "Oh...it'll only take a half a stick of incense."
+    b "...in the mean time..."
+    s "What in the mean time"
+    #Blush birb
+    b "M-maybe I could help groom you? I always love getting my feathers groomed. It's a good way to pass the time and it feels great."
+    s "..."
+    b "..."
+    s "..."
+    b "Right. You don't have any feathers."
+    s "I will go meditate until your birds arrive."
+    #snek leave
+    b "O-okay then."
+    "Fleur turns to me."
+    b "Haha...she one frigid lady huh?"
     
+    menu:
+
+        "Dude you're totally blowing it with her.":
+            b "W-what?"
+            #Shocked birb
+            b "What on Earth are you talking about"
+            mc "It's clear as day. You like her."
+            b "What?!"
+            #blush birb
+            mc "And I say you have a shot with her too."
+            "Fleur's expression straightens."
+            #neutral birb
+            b "What do I have to do?"
+            "Uh oh. I'm getting an idea."
+            mc "When her father's journals arrive, it will be quite an emotional experience for her."
+            mc "You have got to be there for her when that happens."
+            b "Makes sense"
+            mc "But what she really wants closure for her father, so it is paramount that find her killer."
+            b "But I'm no detective. What if I can't figure it out?"
+            mc "I'm sure you can just sort of hand wave it; all she wants is to see someone dead."
+            mc "It was probably just the guard."
+            b "What makes you think that?"
+            mc "He's the only other character sprite in the game and all the devs are really tired and want to go to sleep"
+            b "What."
+            mc "I mean...uh...the guard would have been in the closest proximity to your father most of the time"
+            "Eh not my best work"
+            b "Hmm...you're right"
+            "Holy shit she bought it"
+            "A screech is heard above us followed by the flapping of wings."
+            mc "That's your cue."
+            b "You're right"
+            "She hugs me"
+            b "Thank you"
+            "As soon as the messenger lands on Fleur's shoulder, she takes off running towards Zuru"
+            #brib leaves
+            "Reach into my pockets and pull out Fleur's wallet."
+            mc "No...thank you."
+
+            centered "GOOD END REACHED: In a Mouse's Nature"
+            $ persistent.lastending = "7"
+            $ persistent.pairendreached = True
+
+        "She's having a rough time.":
+            b "But I just want to help her."
+            mc "I know that...I do too, but there's not much that we can do for her at this moment."
+            #Sad birb
+            mc "Hey. Cheer up."
+            mc "I know you mean well."
+            "She refuses to meet my gaze"
+            mc "Hey...Look at me."
+            "She raises her gaze to meet mine. Her eyes are damp."
+            b "Don't look at me."
+            b "I'm not usually this emotional."
+            b "I'm-"
+            mc "You're beautiful"
+            "Oh my god yuck I can't believe I said that."
+            b "What?"
+            mc "I mean...I feel like I'm only just seeing you fully for the first time"
+            b "Settle down, Mouse"
+            mc "No I refuse. All this time you've been so uptight about Justice, but through this crack in your facade"
+            mc "I finally see what you are."
+            b "And what might that be?"
+            mc "Radiant."
+            #Blush birb
+            "A screech is heard above us followed by the flapping of wings."
+            mc "Come. Take my hand. Your messenger arrives. Let us speak with Zuru."
+            "She takes my hand."
+            "We walk towards Zuru, fingers interlaced."
+            #Enter Neutral Snek
+            mc "Madam. Your father's journal arrives."
+            s "..."
+            b "It's okay Zuru. We'll resolve this...together."
+            "Zuru nods, and together we open the journal."
+            "Flipping through the pages, we scan for clues."
+            s "Look at my father's handwriting! It grows ever more misshapen as the date of his death approaches."
+            b "Astute observation."
+            "Ha wouldn't it be funny if the last page of the journal entry was just a straight up confession letter?"
+            s "There! The entries end here."
+            b "What does the last one say?"
+            "Oh my god it was the guard. He literally signed his name as 'Guard'"
+            mc "Ladies...we have our killer"
+            s "The Guard? I can't believe this."
+            "Neither can I; this feels super contrived."
+            s "The Guard has been the guard for our household ever since I was a little girl."
+            #Sad Snek
+            "Fleur looks at Zuru, the back at me."
+            #Sad Birb
+            b "Do something."
+            "I sigh."
+            mc "Get me a sword."
+            "Fleur draws a sword from her sheath and hands it to me. I fumble with the weight but manage to steady it."
+            mc "Madam."
+            "Zuru looks up at me."
+            mc "I swear upon this sword that we will avenge your father."
+            mc "From here on out, I am to be your blade, and you shall be my liege. Together, we shall-"
+            s "Rise, Mouse. I appreciate your display. Sincerely."
+            "We rise to our feet."
+            s "Come forth. Together, we shall avenge him together."
+            "Together, we take each other's hands, and march off into the sunset, filled with determination."
+
+            scene black with fade
+
+            centered "GOOD END REACHED: Kiss Kiss Fall In Love"
+            $ persistent.lastending = "6"
+            $ persistent.haremendreached = True
+
     scene black
     with fade
-
-    centered "GOOD END REACHED: Kiss Kiss Fall In Love"
-    $ persistent.lastending = "6"
-    $ persistent.haremendreached = True
-
-    scene black
-    with fade
-
-    centered "GOOD END REACHED: In a Mouse's Nature"
-    $ persistent.lastending = "6"
-    $ persistent.pairendreached = True
-
+    
     return
