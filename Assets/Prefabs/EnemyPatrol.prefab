@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373398210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.664997, y: -15.460988, z: -0.6488795}
+  m_LocalPosition: {x: 24.64, y: -11.53, z: -0.6488795}
   m_LocalScale: {x: 1.2595518, y: 1.2595518, z: 1.2595518}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992067973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.329285, y: -15.460988, z: -0.6488795}
+  m_LocalPosition: {x: 55.6, y: -11.47, z: -0.6488795}
   m_LocalScale: {x: 1.2595518, y: 1.2595518, z: 1.2595518}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,14 +86,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999926881772588741}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3881, y: 0.0036, z: 1.28}
-  m_LocalScale: {x: 0.5023175, y: 0.09486973, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0.1117739, w: 0.9937337}
+  m_LocalPosition: {x: 1.467, y: -0.039, z: 1.28}
+  m_LocalScale: {x: 10.161635, y: 2.6553507, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7160876262796579321}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.835}
 --- !u!212 &7492547415245228622
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 11eb8ec0e4caa9e4eb36ce208d4cc5be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a47bde8c6d924c2d887b301d65a58de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
   m_FlipX: 0
   m_FlipY: 0
@@ -196,8 +196,9 @@ MonoBehaviour:
   leftEdge: {fileID: 1373398211}
   rightEdge: {fileID: 1992067974}
   enemy: {fileID: 7160876262796579321}
+  enemyObject: {fileID: 7160876261444753565}
   speed: 2
-  idleDuration: 1
+  idleDuration: 0
   anim: {fileID: 7160876262796579323}
   targetLight: {fileID: 7160876262625307122}
 --- !u!1 &7160876262625307122
@@ -302,8 +303,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -400,7 +401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264616228802369163, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
       propertyPath: colliderDistance
-      value: 0.3
+      value: 2.740183
       objectReference: {fileID: 0}
     - target: {fileID: 5264616228802369163, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
       propertyPath: wallLayer.m_Bits

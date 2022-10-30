@@ -10,6 +10,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header ("Enemy")]
     [SerializeField] public Transform enemy;
+    [SerializeField] public GameObject enemyObject;
 
     [Header ("Movement Parameters")]
     [SerializeField] private float speed;
@@ -65,7 +66,9 @@ public class EnemyPatrol : MonoBehaviour
                     Debug.Log("Turn off");
                     targetLight.GetComponent<LightAlert>().turnOff();
                 targetLight.GetComponent<LightAlert>().toggleLightHasFinder();
-                    this.gameObject.SetActive(false);
+                isSeeking = false;
+                this.GetComponentInParent<EnemyController>().requeue(enemyObject);
+                //this.gameObject.SetActive(false);
             } else {
                 if (targetLight.GetComponent<Transform>().position.x > enemy.position.x)
                     {
@@ -75,11 +78,8 @@ public class EnemyPatrol : MonoBehaviour
                     {
                         this.MoveInDirection(-1);
                     }
-                }
-
-             
+                }    
         }
-
 
     }
     
@@ -116,5 +116,11 @@ public class EnemyPatrol : MonoBehaviour
     public bool enemyIsSeeking()
     {
         return isSeeking;
+    }
+
+    public void SetEndPoints(Transform leftPos, Transform rightPos)
+    {
+        leftEdge.transform.position = leftPos.position;
+        rightEdge.transform.position = rightPos.position;
     }
 }

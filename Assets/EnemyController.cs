@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] GameObject leftSpawn;
     [SerializeField] GameObject rightSpawn;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject spawnCooldown;
     private Queue<GameObject> enemyQueue;
     private GameObject firstEnemy;
 
@@ -18,7 +19,9 @@ public class EnemyController : MonoBehaviour {
     void Start()
     {
         enemyQueue = new Queue<GameObject>();
-        enemyQueue.Enqueue(GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform));
+        GameObject newEnemy = GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform);
+        newEnemy.GetComponent<EnemyPatrol>().SetEndPoints(leftSpawn.transform, rightSpawn.transform);
+        enemyQueue.Enqueue(newEnemy);
         firstEnemy = enemyQueue.Dequeue();
 
     }
@@ -28,7 +31,10 @@ public class EnemyController : MonoBehaviour {
     {
 
         if (Input.GetKeyDown(KeyCode.N)) {
-            enemyQueue.Enqueue(GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform));
+           GameObject newEnemy = GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform);
+            newEnemy.GetComponent<EnemyPatrol>().SetEndPoints(leftSpawn.transform, rightSpawn.transform);
+            enemyQueue.Enqueue(newEnemy);
+
         }
 
         lightQueue(light1);
@@ -41,20 +47,33 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void lightQueue(GameObject light) {
-        if (light.GetComponent<LightAlert>().lightIsOn()
-             && !firstEnemy.GetComponent<EnemyPatrol>().enemyIsSeeking() && !light.GetComponent<LightAlert>().getLightHasFinder())
+        if (firstEnemy == null && enemyQueue.Count != 0) 
         {
-            firstEnemy.GetComponent<EnemyPatrol>().startSeeking(light);
-            light.GetComponent<LightAlert>().toggleLightHasFinder();
-            if (enemyQueue.Count >= 1)
+            firstEnemy = enemyQueue.Dequeue();
+            Debug.Log("Looking for next nonNull");
+        } else
+        {
+            if (light.GetComponent<LightAlert>().lightIsOn()
+             && !firstEnemy.GetComponent<EnemyPatrol>().enemyIsSeeking() && !light.GetComponent<LightAlert>().getLightHasFinder())
             {
-                firstEnemy = enemyQueue.Dequeue();
-            }
-            else
-            {
-                enemyQueue.Enqueue(GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform));
-                firstEnemy = enemyQueue.Dequeue();
+                firstEnemy.GetComponent<EnemyPatrol>().startSeeking(light);
+                light.GetComponent<LightAlert>().toggleLightHasFinder();
+                if (enemyQueue.Count >= 1)
+                {
+                    firstEnemy = enemyQueue.Dequeue();
+                }
+                else
+                {
+                    GameObject newEnemy = GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform);
+                    newEnemy.GetComponent<EnemyPatrol>().SetEndPoints(leftSpawn.transform, rightSpawn.transform);
+                    enemyQueue.Enqueue(newEnemy);
+                    firstEnemy = enemyQueue.Dequeue();
+                }
             }
         }
+    }
+
+    public void requeue(GameObject enemy) {
+        enemyQueue.Enqueue(enemy);
     }
 }

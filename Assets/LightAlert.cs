@@ -7,6 +7,8 @@ public class LightAlert : MonoBehaviour
     private bool isOn;
     private bool hasFinder;
     [SerializeField] KeyCode onKey;
+    [SerializeField] Sprite offSprite;
+    [SerializeField] Sprite onSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class LightAlert : MonoBehaviour
         isOn = true;
         if (isOn)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            gameObject.GetComponent<SpriteRenderer>().sprite = onSprite;
         }
         
     }
@@ -34,7 +36,7 @@ public class LightAlert : MonoBehaviour
     public void turnOff()
     {
         isOn = false;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        gameObject.GetComponent<SpriteRenderer>().sprite = offSprite;
     }
 
     public bool lightIsOn()

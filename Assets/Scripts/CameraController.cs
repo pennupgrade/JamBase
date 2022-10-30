@@ -15,6 +15,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float cameraSpeed;
     private float lookAhead;
 
+    private void Start()
+    {
+        //this.transform.position.Set(player.position.x, transform.position.y -f, transform.position.z);
+    }
     private void Update(){
         //for Room Camera
         //transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPosX, transform.position.y, transform.position.z), 

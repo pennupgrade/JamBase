@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetTrigger("jump");
         } else if(onWall() && !isGrounded()){ //walljump behavior
             if(horizontalInput == 0){
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 6, 0); 
+                body.velocity = new Vector2(-speed, 0); 
                 transform.localScale = new Vector2(-Mathf.Sign(transform.localScale.x), transform.localScale.y);
             }
             else{ //on ground/running.
