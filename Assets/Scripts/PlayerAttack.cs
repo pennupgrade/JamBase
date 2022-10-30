@@ -26,12 +26,9 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         //Switchboard making sure the cooldown is not active and the player can attack 
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack() && !playerHealth.isDead()){
-            Attack();
-        }
 
         // check for melee
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && playerMovement.canAttack() && !playerHealth.isDead())
         {
             RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.up, 0.1f, enemyLayer);
             if (raycastHit.collider != null)
@@ -65,11 +62,6 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
-
-        //resets any re-summoned books to the position of the firepoint 
-        books[FindBook()].transform.position = firePoint.position;
-        //Sends the fireball into the direction the player is facing 
-        books[FindBook()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     // claire: melees enemy
@@ -79,14 +71,5 @@ public class PlayerAttack : MonoBehaviour
 
     }
     
-    //Assigns which book in the array to use, given that it's not currently already in use
-    private int FindBook()
-    {
-        for (int i = 0; i < books.Length; i++)
-        {
-            if (!books[i].activeInHierarchy)
-                return i;
-        }
-        return 0;
-    }
+   
 }
