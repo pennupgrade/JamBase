@@ -821,7 +821,7 @@ label day2:
 
 label day2b:
 
-    scene bg birdnest_with_egg
+    scene bg bird house eggs
     with fade
     play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
 
@@ -849,7 +849,7 @@ label day2b:
     s "We'll turn these eggs into blueberry muffins, just like he would've wanted, right?"
     mc "Y-yeah, for sure."
 
-    scene bg birdnest
+    scene bg bird house eggs
     with fade
     play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
 
@@ -861,7 +861,7 @@ label day2b:
     
     "Oooof course."
 
-    show bird sad at common
+    show fleur sad at common
 
     s "Ha! Now you can experience the loss of a loved one."
     b "I've not the foggiest idea of what I've done to you."
@@ -902,7 +902,7 @@ label day2b:
             s "{i}Though not related by blood, She is risking her life for my father's sake all the same... she's such a good person...{/i}"
             "She feels a warm energy swell up inside of her, and summons new strength."
             
-            "She manages to overpower Fleur, knocking her to the ground. Coincidentally, right at me feet."
+            "She manages to overpower Fleur, knocking her to the ground. Coincidentally, right at my feet."
             play sound "audio/loud_thump.mp3"
             
             mc "Jesus, I can not hold this rock any longer...!"
@@ -982,7 +982,7 @@ label day3:
     b "Where are you going!"
     "I think she took the bait"
 
-    show zuru at common
+    show zuru happy at centerright
 
     s "You!"
     mc "..."
@@ -1028,12 +1028,13 @@ label day3:
     b "MOUSE! What has the monster done to you?!"
     mc "JUST RUN" with hpunch
 
+    hide fleur
     show fleur angry with moveinleft
 
     #Birb murder mode activated
-    b "Put."
-    b "Her."
-    b "Down."
+    b "Put." with hpunch
+    b "Her." with hpunch
+    b "Down." with hpunch
     "Zuru looks at me in shock and despair. I sneak a grin before turning to my faux tears."
     b "YOU WILL DO NO FURTHER HARM ANYMORE INNOCENTS" with hpunch
     "Zuru meets my gaze. She's crying."
