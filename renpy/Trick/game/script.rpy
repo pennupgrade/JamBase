@@ -79,6 +79,8 @@ label day0a:
     scene bg cage dark with hpunch
     show guard angry
 
+    play music "audio/snake.ogg" fadeout 1.0 fadein 1.0
+
     q "Hey- Wake up!"
     q "We're here."
 
@@ -113,6 +115,8 @@ label day0:
 
     scene bg cage dark with hpunch
     show guard angry
+
+    play music "audio/snake.ogg" fadeout 1.0 fadein 1.0
 
     q "Hey- Wake up!"
     q "We're here."
@@ -222,6 +226,8 @@ label day1:
 
     scene bg cage dark with hpunch
     show guard angry
+
+    play music "audio/snake.ogg" fadeout 1.0 fadein 1.0
 
     q "Hey- Wake up!"
     q "We're here."
@@ -342,6 +348,8 @@ label day1:
     scene bg courtroom
     with fade
 
+    play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
+
     q "So she's the example?"
     q2 "Is she the petty thief?"
     q "She doesn't look like one though..."
@@ -406,6 +414,8 @@ label day1b:
 
     scene bg cage dark with hpunch
     show guard angry
+
+    play music "audio/snake.ogg" fadeout 1.0 fadein 1.0
 
     q "Hey- Wake up!"
     q "We're here."
@@ -508,6 +518,8 @@ label day1b:
             scene bg courtroom
             with fade
 
+            play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
+
             q "So she's the example?"
             q2 "Is she the petty thief?"
             q "She doesn't look like one though..."
@@ -577,6 +589,8 @@ label day1c:
 
     scene bg crimescene
     with fade
+
+    stop music fadeout 1.0
 
     # TODO: the first time mc arrives at the crimescene with the snake
     # they are investingating the scene together
@@ -679,6 +693,8 @@ label day2:
 
     scene bg crimescene
     with fade
+
+    stop music fadeout 1.0
 
     # TODO: the first time mc arrives at the crimescene with the bird
     # they are investingating the scene together
@@ -788,6 +804,7 @@ label day2b:
 
     scene bg birdnest_with_egg
     with fade
+    play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
 
     # TODO: the first time mc arrives at the birdnest with the snake
     # should have the snake break the eggs,
@@ -815,6 +832,7 @@ label day2b:
 
     scene bg birdnest
     with fade
+    play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
 
     "Zuru snatches the eggs, cracks them open, then carefully dumps their contents into a bottle."
     "She smiles at me, holding out the bottle of child juice."
@@ -894,6 +912,8 @@ label day2b:
 label day3:
 
     scene bg cage light
+
+    play music "audio/snake.ogg" fadeout 1.0 fadein 1.0
 
     # TODO: the last time mc arrives at the cage with the bird
     # should have the bird kill the snake (after seeing the snake break their eggs_)
@@ -1017,6 +1037,7 @@ label day3b:
     "Clattering and banging sound from around as Fleur and Zuru return from their directions, searching for evidence."
 
     scene bg crimescene with fade
+    stop music fadeout 1.0
     show fleur happy at centerleft
     show zuru happy at centerright
 
@@ -1114,6 +1135,7 @@ label day3b:
             "Eh not my best work"
 
             scene bg crimescene with fade
+            stop music fadeout 1.0
             show fleur happy at common
 
             b "Hmm...you're right"
