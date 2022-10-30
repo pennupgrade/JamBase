@@ -8,8 +8,8 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth{get; private set;}
     private Animator anim;
-    private bool dead; 
-
+    private bool dead;
+    [SerializeField] GameObject parent; 
     [Header ("iFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numFlashes;
@@ -39,9 +39,13 @@ public class Health : MonoBehaviour
                 
                 //Enemy
                 if(GetComponent <MeleeEnemy>() != null){
-                    GetComponentInParent<EnemyPatrol>().enabled = false;
-                    GetComponent<MeleeEnemy>().enabled = false;
+                    Debug.Log("destroy here");
+                    //GetComponentInParent<EnemyPatrol>().enabled = false;
+                    //GetComponent<MeleeEnemy>().enabled = false;
                     dead = true;
+                    parent.GetComponentInChildren<SpriteRenderer>().color = Color.gray;
+                    parent.transform.position = Vector3.down;
+                    Destroy(parent);
                 } 
             } 
         }

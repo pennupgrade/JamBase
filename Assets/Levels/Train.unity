@@ -3066,7 +3066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688872986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3665, y: -1.3900001, z: -1}
+  m_LocalPosition: {x: 18.24, y: -1.3900001, z: -1}
   m_LocalScale: {x: 0.33641, y: 0.58164996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3605,7 +3605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f76ffc603874d47af52a3b0875d076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onKey: 49
+  onKey: 52
 --- !u!212 &841618084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4609,7 +4609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188636933}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65.93, y: -32.700005, z: -7.9323535}
+  m_LocalPosition: {x: 25.75, y: -13.09, z: -7.9323535}
   m_LocalScale: {x: 3.1729367, y: 3.1729367, z: 3.1729367}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7329,6 +7329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light1: {fileID: 173695343}
+  light2: {fileID: 360570492}
+  light3: {fileID: 2052784276}
+  light4: {fileID: 841618081}
   enemyPrefab: {fileID: 7160876261444753565, guid: e84229553f9014a8a9b0ac54ada47c6b, type: 3}
   leftSpawn: {fileID: 1188636933}
   rightSpawn: {fileID: 1288402728}
@@ -7342,7 +7345,7 @@ Transform:
   m_GameObject: {fileID: 1919020139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -61.97812, y: 24.125488, z: 0}
-  m_LocalScale: {x: 0.7939332, y: 0.7939332, z: 0.7939332}
+  m_LocalScale: {x: 2, y: 2, z: 0.7939332}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1288402729}
@@ -8302,7 +8305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f76ffc603874d47af52a3b0875d076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onKey: 50
+  onKey: 51
 --- !u!212 &2052784279
 SpriteRenderer:
   m_ObjectHideFlags: 0
