@@ -58,7 +58,9 @@ label start:
 
         jump day1b
 
-    elif persistent.lastending == "4" or persistent.lastending == "5": # reached BAD END or GOOD END
+    elif persistent.lastending == "4" # BAD END
+        or persistent.lastending == "5" # GOOD END 
+        or persistent.lastending == "6": # TRUE END
 
         if persistent.lastending == "4":
             
@@ -67,12 +69,56 @@ label start:
 
         elif persistent.lastending == "5":
 
-            # ?
+            if persistent.haremendreached or persistent.pairendreached:
+                centered "With the story wrapped up, I wonder what else would've happened if I made different choices."
+            else:
+                centered "Perhaps I ought to find out who really killed Zuru's father."
 
-        # jump -> start of a new day (try to get a good end)
+        elif persistent.lastending == "6":
+
+            centered "With the story wrapped up, I wonder what else would've happened if I made different choices."
+
+        jump day0a
 
     return
 
+label day0a:
+
+    scene bg cage dark with hpunch
+    show guard angry
+
+    q "Hey- Wake up!"
+    q "We're here."
+
+    mc "Y-you bastard..."
+    "I shake the cage vigorously and the covering slides off."
+
+    scene bg cage light with fade
+    show guard angry at common
+    
+    q "What?"
+
+    mc "Haah... nevermind. Let's just get on with the story."
+    mc "I'm trying to reach the other endings right now."
+
+    menu:
+
+        "I'm going to get an enraged Zuru to break some eggs!"
+        if not persistent.zuruendreached or not persistent.badendreached:
+
+            "...and maybe get her to fall in love with me~"
+            jump day2b
+
+        "I ought to get Fleur to take care of Zuru for me."
+        if not persistent.fleurendreached:
+
+            jump day3
+
+        "I still haven't found out who killed Zuru's father..."
+        if not persistent.haremendreached or not persistent.pairendreached:
+
+            jump day3b
+        
 label day0:
 
     scene bg cage dark with hpunch
@@ -670,7 +716,8 @@ label day2:
 
         # choice 2-
         # should end with the mc & snake approaching snake & recruiting snake
-        "Look how she weeps"
+        "Look how she weeps":
+
             b "She does not weep? I see no tears in her eyes."
             mc "Peer beyond her mask of stone"
             mc "..."
@@ -712,6 +759,7 @@ label day2:
             mc "We offer aid not because we believe you unfit. We seek to aid because this is a matter of Justice."
             b "What she said."
             s "Very well. Then I know just the place to check out."
+
             jump day3b
 
     return
