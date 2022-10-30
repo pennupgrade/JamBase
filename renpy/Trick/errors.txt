@@ -2,49 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 553: expected statement.
-    q: "Shown your true colors, huh?"
-     ^
-
-File "game/script.rpy", line 554: expected statement.
-    s: "Shut up Fleur! I'll turn you into poultry!"
-     ^
-
-File "game/script.rpy", line 555: expected statement.
-    b: "And I'll turn you in to law enforcement! See you in court!"
-     ^
-
-File "game/script.rpy", line 557: expected statement.
-    s: "Argh!"
-     ^
-
-File "game/script.rpy", line 559: expected statement.
-    mc: "Woah, you alright there?"
-      ^
-
-File "game/script.rpy", line 560: expected statement.
-    s: "Cease your pleasantries."
-     ^
-
-File "game/script.rpy", line 561: expected statement.
-    mc: "Y-yeah! That darn bird! So, am I off the hook? Can I go?"
-      ^
-
-File "game/script.rpy", line 562: expected statement.
-    s: "We can talk about that another time. Right now, it is time to avenge my father--"
-     ^
-
-File "game/script.rpy", line 563: expected statement.
-    s: "-- and your instructor."
-     ^
-
-File "game/script.rpy", line 564: expected statement.
-    mc: "Ah."
-      ^
-
-File "game/script.rpy", line 697: end of line expected.
-    show bird sad.
-                 ^
+File "game/script.rpy", line 53: if statement expects a non-empty block.
+    if persistent.lastending == "1":
+                                    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Oct 29 23:27:10 2022
+Sun Oct 30 00:07:45 2022

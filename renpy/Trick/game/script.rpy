@@ -1,6 +1,5 @@
 ﻿# Set Up
-default persistent.endings = None
-default persistent.day = 0
+default persistent.lastending = ""
 
 transform common (x=960):
     yanchor 1.0 subpixel True 
@@ -36,22 +35,23 @@ init python:
     q = Character('???', color="#babac2")
     q2 = Character('???', color="#88888f")
 
-    if persistent.endings is None:
-        persistent.endings = set()
-
-    persistent.day = 0
+    persistent.lastending = ""
 
 label start:
 
-    if persistent.day == 0:
+    if persistent.lastending == "":
 
         centered "UPGRADE Game Jam presents..."
 
         jump day0
 
-    if persistent.day == 1:
+    elif persistent.lastending == "0":
 
         jump day1
+
+    elif persistent.lastending == "1":
+
+        jump day1b
 
     return
 
@@ -153,13 +153,13 @@ label day0:
             "Scared, I backed to the edge of the cage, but I couldn't avoid her snakey bite."
 
             hide zuru with moveoutbottom
-            scene bg cage dark
+            scene black with fade
 
             mc "..."
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
 
-    $ persistent.day = 1
+    $ persistent.lastending = "0"
     return
 
 label day1:
@@ -332,15 +332,16 @@ label day1:
 
     b "Aaaa-"
     "Yup. Against all expectations, I'm getting picked up again-"
-    "And yuuuuup. I guess I am going down the hatch. Yet again."
 
     hide fleur with moveoutbottom
-    scene bg cage dark
+    scene black with fade
+    
+    "And yuuuuup. I guess I am going down the hatch. Yet again."
 
     "Guess this really is farewell once again."
     "Hope her stomach acids end my pain quickly-"
     
-    $ persistent.day = 1
+    $ persistent.lastending = "1"
     return
 
 label day1b:
@@ -382,7 +383,7 @@ label day1b:
     hide guard with moveoutright
     show zuru happy at moveinleft
 
-    mc "Hey bestie Zuru, before you say anything: let me tell you everything about your dad."
+    mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
     s "Tell me WHAT?"
     "This snake lady better hold her tears better this time. I am at the end of my patience too."
 
