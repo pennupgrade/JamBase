@@ -369,6 +369,71 @@ label day1c:
         # choice 2-
         # should end with the mc & snake approaching bird & recruiting bird
 
+    show snake happy with moveinleft
+
+    s "Well, here we are. Let's do this quickly, I'd... rather not spend too much time here."
+
+    mc "Yes, yes, he was a great man. I remembered his blueberry muffins so fondly."
+
+    s "...Right."
+    s "Well, out with it then. Which way did the culprit go?"
+
+    "Yeesh, right to business."
+    mc "Hm... I'm, uh, having trouble remembering."
+    mc "You know, because I was knocked out and captured. Thanks for that."
+    
+    s "{i}Sighs{/i} Out with it."
+    "I need something to work with here..."
+
+    mc "Uh, so there was this girl, right? And, uh..."
+    
+    "In the distance, I see someone else approaching the crime scene."
+
+    menu:
+
+        "Oh, that's her! She was the killer!":
+            
+            show snake angry at common
+            "I knew it. That rotten bird clan!"
+            hide snake with moveoutright
+            "Snake lunges towards the figure, weapon at the ready."
+
+            show snake angry
+            show bird happy
+
+            q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes--"
+            "Snake aims a devastating blow at the girl's head"
+            s "I'll turn you into poultry!"
+            b: "Shown your true colors, huh? Very well!"
+            "Bird draws her weapon, and the two engage in combat."
+            # jump to something
+
+        "I'm having trouble remembering... maybe that girl over there knows something?":
+
+            s "...Very well then."
+            hide snake with moveoutright
+            "As Snake walks off, I hear her mutter something about hitting me a little too hard."
+
+            show bird happy
+            "As we get closer, I see Snake grimace."
+
+            q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes."
+            s "I've no time for your banter for your banter, Bird."
+
+            "I lock eyes with Bird, and her face hardens for just a second."
+            "Oh, rats. I think she recognizes me."
+
+            b "Why, I had no idea you were in good company with fugitives. Fitting."
+            mc "Yeah, you'd never expect Commander Snake to commit tax fraud, huh?"
+            s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge my father."
+            s "Or rather she's a 'key witness in an ongoing murder case' in your bureaucratic terms."
+            b "I never figured you one to even know words that long."
+            s "And I never figured you one to obstruct justice. Cut the chatter. Did you see anything here?"
+            b "..."
+            b "{i}Sighs{/i} Very well, I'll aid you."
+            b "I didn't see anything myself, but you'll probably have better luck with me helping you ask around."
+            # jump to something
+
     return
 
 label day2:
@@ -388,8 +453,7 @@ label day2:
 
     b "Heinous?"
     mc "Oh yes. An act so wretched it would make your toes curl."
-    b "Hey watch it with the references to my feet. Also why are you talking like that?"
-
+    b "Hey, watch it with the references to my feet. Also why are you talking like that?"
     menu:
 
         "A different writer is writing my dialogue now":
