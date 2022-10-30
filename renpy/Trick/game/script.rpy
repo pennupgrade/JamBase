@@ -604,10 +604,7 @@ label day2:
 
     b "Uh,"
     b "what am I supposed to be looking at here."
-    
-
     mc "Why, this is the site of a heinous crime."
-
     b "Heinous?"
     mc "Oh yes. An act so wretched it would make your toes curl."
     b "Hey, watch it with the references to my feet. Also why are you talking like that?"
@@ -652,6 +649,49 @@ label day2:
 
         # choice 2-
         # should end with the mc & snake approaching snake & recruiting snake
+        "Look how she weeps"
+            b "She does not weep? I see no tears in her eyes."
+            mc "Peer beyond her mask of stone"
+            mc "..."
+            mc "and into the misty eyes of her soul."
+            b "w.."
+            b "..wow"
+            b "When did you get so poetic?"
+            mc "I am merely describing what I see"
+            #have the bird blush 
+            b "Well...then it is only just that we help her"
+            #have snake appear on screen
+            b "Madam...are you alright?"
+            s "..."
+            b "Madam?"
+            s "...hm?"
+            b "You seem troubled."
+            s "Do I?" #she should have a very neutral face
+            mc "It's written all over your face"
+            b "Y-yeah! It's so obvious."
+            b "Anyone with even a modicum of emotional intelligence could tell that from a mile away"
+            s "Really?"
+            b "I simply peered past your mask of stone"
+            b "and..."
+            s "..."
+            b "...(what was it again)"
+            mc "(into the misty eyes of-)"
+            b "Into the misty eyes of her soul."
+            "I roll my eyes"
+            #Snake blushes
+            mc "Maiden. What troubles you?"
+            s "My father..."
+            s "He lays slain upon this very earth."
+            b "How wretched...Truly heinous."
+            mc "Far more wretched than petty theft."
+            b "By far..."
+            b "Maiden. We must right this wrong and bring the perpetrator of this act to justice."
+            s "I am perfectly capable of avenging my father myself."
+            b "..."
+            mc "We offer aid not because we believe you unfit. We seek to aid because this is a matter of Justice."
+            b "What she said."
+            s "Very well. Then I know just the place to check out."
+            jump day3b
 
     return
 
