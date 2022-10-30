@@ -577,12 +577,6 @@ label day1b:
 
             jump day1c
 
-    scene bg courtroom
-    with fade
-
-    # TODO: the second time mc is brought to the bird court
-    # should end with mc successfully sweettalking information out of the bird
-
     return
 
 label day1c:
