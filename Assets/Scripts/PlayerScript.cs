@@ -13,15 +13,14 @@ public class PlayerScript : MonoBehaviour
     public RawImage[] guns;
     public Texture[] gunTextures;
     public Texture[] unselectedTextures;
-
+    public AudioSource sw;
     public Sprite[] gunModes;
     private int indx = 0;
+    private bool chngd = false;
 
     //spacebar shoot, up key to move up a level, down key to move down
 
     //GunType {FireRate, isAuto, damage, etc...}
-
-
 
 
     void Start()
@@ -34,7 +33,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         // change the lane
-
+        chngd = false;
         for (int i = 0; i < 4; i++)
         {
             guns[i].texture = unselectedTextures[i];
@@ -43,10 +42,12 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow) && playerLane < GameManager.lanes.Length - 1)
         {
+            chngd = true;
             playerLane += 1;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && playerLane > 0)
         {
+            chngd = true;
             playerLane -= 1;
         }
 
@@ -88,26 +89,36 @@ public class PlayerScript : MonoBehaviour
         {
             indx = 0;
             guns[indx].texture = gunTextures[indx];
+            //chngd = true;
 
         }
         else if (Input.GetKey(KeyCode.X))
         {
             indx = 1;
             guns[indx].texture = gunTextures[indx];
+            //chngd = true;
 
         }
         else if (Input.GetKey(KeyCode.C))
         {
             indx = 2;
             guns[indx].texture = gunTextures[indx];
+            //chngd = true;
 
         }
         else if (Input.GetKey(KeyCode.V))
         {
             indx = 3;
             guns[indx].texture = gunTextures[indx]; //very ugly but i am losing it bro
+            //chngd = true;
         }
+        if (chngd)
+        {
+            sw.Play();
+        }
+
         gameObject.GetComponent<SpriteRenderer>().sprite = gunModes[indx];
+
 
         transform.position = new Vector3(GameManager.lanes[playerLane] - 0.21f, -3.5f , 0);
     }

@@ -18,7 +18,7 @@ public class MobSpawnerScript : MonoBehaviour
     public GameObject monster;
     public float spawnLow, spawnHigh;
 
-    public static float p_val = 0.3f;
+    public static float p_val = 0.13f;
 
     float[,] spawn_Probabilities = new float[2,4]
         {  {p_val, p_val, p_val, p_val},
@@ -45,7 +45,7 @@ public class MobSpawnerScript : MonoBehaviour
         if (!GameManager.gameOver)
         {
             timer += Time.deltaTime;
-            p_val = (0.2f * Mathf.Log(timer + 0.5f)) + 0.3f;
+            p_val = (0.23f * Mathf.Log(timer + 0.5f)) + 0.1f;
 
             if (timer > spawnTime)
             {
@@ -91,7 +91,7 @@ public class MobSpawnerScript : MonoBehaviour
                         slots[j] = j;
                     }
                 }
-                if(isTrick < p_val)
+                if(isTrick < p_val/2f)
                 {
                     laneIndex = slots[ (int) Random.Range(0f, 3f)];
                 }

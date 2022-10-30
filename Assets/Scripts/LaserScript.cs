@@ -20,14 +20,14 @@ public class LaserScript : MonoBehaviour
 
         if (faded)
         {
-            sprite.color = new Color(1f, 1f, 1f, Mathf.Lerp(sprite.color.a, maximum, step));
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.Lerp(sprite.color.a, maximum, step));
             if (Mathf.Abs(maximum - sprite.color.a) <= threshold)
                 faded = false;
 
         }
         else
         {
-            sprite.color = new Color(1f, 1f, 1f, Mathf.Lerp(sprite.color.a, minimum, step));
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.Lerp(sprite.color.a, minimum, step));
             if (Mathf.Abs(sprite.color.a - minimum) <= threshold)
                 faded = true;
         }

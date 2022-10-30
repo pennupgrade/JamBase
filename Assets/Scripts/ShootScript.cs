@@ -7,6 +7,10 @@ public class ShootScript : MonoBehaviour
     public Sprite[] casingTextures;
     public GameObject casing;
     public GameObject laser;
+
+    public AudioSource[] sfx;
+    public AudioSource[] monsterSfx;
+
     private Color[] laserColors = { Color.red, Color.blue, Color.green, Color.yellow };
 
 
@@ -65,8 +69,9 @@ public class ShootScript : MonoBehaviour
 
                     if (tgScr.lives <= 0)
                     {
+                        monsterSfx[tgScr.lane].Play();
                         currLane.RemoveAt(0);
-                        Destroy(target);
+                        tgScr.isDead = true;
                     }
 
                     //ebug.Log(target.GetComponent<MobScript>().lives);
@@ -78,11 +83,13 @@ public class ShootScript : MonoBehaviour
             cs.transform.position = new Vector3(GameManager.lanes[PlayerScript.playerLane], -4, 0);
             cs.GetComponent<SpriteRenderer>().sprite = casingTextures[indx];
 
+            sfx[indx].Play();
 
             float laser_h = laserY_Final - (laserY_initial);
 
             var ls = Instantiate(laser);
             ls.GetComponent<SpriteRenderer>().color = laserColors[indx];
+
             ls.transform.localScale = new Vector3(0.35f, laser_h, 0);
             ls.transform.position = new Vector3(
                 GameManager.lanes[PlayerScript.playerLane],
