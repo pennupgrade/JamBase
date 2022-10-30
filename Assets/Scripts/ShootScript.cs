@@ -12,7 +12,8 @@ public class ShootScript : MonoBehaviour
     public AudioSource[] monsterSfx;
 
     private Color[] laserColors = { Color.red, Color.blue, Color.green, Color.yellow };
-
+    private float cooldown = 0.05f;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class ShootScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         int indx = -1;
         if (Input.GetKeyDown(KeyCode.Z)){
             indx = 0;
@@ -35,13 +38,14 @@ public class ShootScript : MonoBehaviour
         }
 
 
-        if (indx != -1)
+        if (indx != -1 && timer > cooldown)
         {
+            timer = 0;
             //get current lane...
             List<GameObject> currLane = MobSpawnerScript.laneObj[PlayerScript.playerLane];
 
             float laserY_Final = 1f; //the start should always be -2.7
-            float laserY_initial = -2.7f;
+            //float laserY_initial = -2.7f;
 
             /*string str = "";
             foreach (var x in currLane)
@@ -85,15 +89,15 @@ public class ShootScript : MonoBehaviour
 
             sfx[indx].Play();
 
-            float laser_h = laserY_Final - (laserY_initial);
+            //float laser_h = laserY_Final - (laserY_initial);
 
             var ls = Instantiate(laser);
             ls.GetComponent<SpriteRenderer>().color = laserColors[indx];
 
-            ls.transform.localScale = new Vector3(0.35f, laser_h, 0);
+            ls.transform.localScale = new Vector3(0.35f, 3f, 0);
             ls.transform.position = new Vector3(
                 GameManager.lanes[PlayerScript.playerLane],
-                laser_h / 2,
+                1.5f/ 2f,
                 0);
 
 

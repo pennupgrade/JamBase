@@ -10,13 +10,15 @@ public class GameManager : MonoBehaviour
     public static AudioSource aaron_Hurt;
     public AudioSource aH;
     public AudioSource deathSound;
+    public AudioSource gameMusic;
+
     public TMP_Text overText;
     public TMP_Text restText;
 
     public static float[] lanes = { -1.17f, -0.39f, 0.39f, 1.17f };
     public static float score;
-    public static int maxLives = 1;
-    private int playerStartlives = 1;
+    public static int maxLives = 3;
+    private int playerStartlives = 3;
     public static int playerLives;
     public static bool gameOver = false;
 
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //gameMusic.Play()
         aaron_Hurt = aH;
         sprite = deathScreen.GetComponent<SpriteRenderer>();
         playerLives = playerStartlives;
@@ -76,21 +79,23 @@ public class GameManager : MonoBehaviour
         else
         {
             //GG
+            //gameMusic.Stop()
             if (!startAnim)
             {
                 startAnim = true;
             }
             else if(startAnim && !canRestart && !runCour)
             {
-                score = 0; //we need to do the sequence
+                //score = 0; //we need to do the sequence
 
                 float step = fade_speed * Time.deltaTime;
 
 
                 if (faded)
                 {
+                    Debug.Log("Go");
                     sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.Lerp(sprite.color.a, maximum, step));
-                    if (Mathf.Abs(maximum - sprite.color.a) <= threshold)
+                    if (Mathf.Abs(maximum - sprite.color.a) <= 0.01f)
                     {
                         runCour = true;
                         faded = false;
@@ -108,19 +113,17 @@ public class GameManager : MonoBehaviour
             }
             else if (!canRestart && runCour)
             {
-                //StartCoroutine(ExampleCoroutine());
+                Debug.Log("Yeah");
                 canRestart = true;
-            }else //by this point, you should be able to restart
-            {
-                restText.text = "Score: " + score + "\nPress space to play again!"; 
-                overText.gameObject.SetActive(true);
-                restText.gameObject.SetActive(true);
+                StartCoroutine(ExampleCoroutine());
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && canRestart){
                 score = 0;
                 startAnim = false;
-                faded = false;
+                runCour = false;
+                canRestart = false;
+                faded = true;
                 overText.gameObject.SetActive(false);
                 restText.gameObject.SetActive(false);
 
@@ -128,6 +131,7 @@ public class GameManager : MonoBehaviour
 
                 playerLives = playerStartlives;
 
+                //gameMusic.Play()
                 gameOver = false; //it is 3 am and i think i am losing it wowza
             }
 
@@ -139,7 +143,10 @@ public class GameManager : MonoBehaviour
     IEnumerator ExampleCoroutine()
     {
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7); // should be 7
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        restText.text = "Score: " + (int)(score * 10f) + "\nPress space to play again!";
+        overText.gameObject.SetActive(true);
+        restText.gameObject.SetActive(true);
     }
 }

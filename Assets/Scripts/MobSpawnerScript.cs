@@ -63,7 +63,7 @@ public class MobSpawnerScript : MonoBehaviour
     {
         timer = 0;
         float lowerBound = 2f / (0.1f * GameManager.score + 1) + 0.2f;
-        spawnTime = Random.Range(lowerBound, 2*lowerBound);
+        spawnTime = Random.Range(lowerBound, 1.3f*lowerBound);
     }
 
     public void spawn()

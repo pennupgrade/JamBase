@@ -120,6 +120,6 @@ public class PlayerScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = gunModes[indx];
 
 
-        transform.position = new Vector3(GameManager.lanes[playerLane] - 0.21f, -3.5f , 0);
+        transform.position = new Vector3(GameManager.lanes[playerLane] - 0.15f, -3.5f , 0);
     }
 }
