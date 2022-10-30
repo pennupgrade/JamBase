@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
     [SerializeField] GameObject light1;
+    [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject enemy1;
     private Queue<GameObject> enemyQueue;
 
