@@ -30,6 +30,32 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+
+Audio credits:
+
+https://freesound.org/people/vrodge/sounds/119545/
+
+https://freesound.org/people/Alexepoch_YT/sounds/435708/
+
+https://freesound.org/people/tommy_mooney/sounds/386706/
+
+https://freesound.org/people/Alexepoch_YT/sounds/435708/
+
+https://freesound.org/people/Suvo/sounds/398005/
+
+https://freesound.org/people/limbo63/sounds/263469/
+
+https://freesound.org/people/greenlinker/sounds/484995/
+
+https://freesound.org/people/Sheyvan/sounds/471079/
+
+https://freesound.org/people/rsellick/sounds/545543/
+
+https://freesound.org/people/TRP/sounds/616995/
+
+https://freesound.org/people/xoiziox/sounds/553374/
+
+SGM soundfont
 """)
 
 
