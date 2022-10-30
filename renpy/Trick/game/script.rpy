@@ -86,6 +86,7 @@ label day0a:
 
     mc "You b-bastard!"
     "{i}I really want to punch this guy."
+    play sound "audio/cover.mp3"
     "As I violently shook within the cage, the covering slipped off."
 
     q "What?"
@@ -126,6 +127,7 @@ label day0:
 
     q "Oh yeah, let me me lift that for you."
     scene bg cage light with easeinbottom
+    play sound "audio/cover.mp3"
     show guard angry at common
     $ q_name = "Guard"
     q "Better?"
@@ -237,6 +239,7 @@ label day1:
 
     q "Oh yeah, let me me lift that for you."
     scene bg cage light with easeinbottom
+    play sound "audio/cover.mp3"
     show guard angry at common
     q "Better?"
     "{i}(Haven't I heard this before...?){/i}"
@@ -327,11 +330,13 @@ label day1:
     s "You were so close to him, so you must know who killed him, right?"
     s "Also... can't you also be-?"
 
+    play sound "audio/caw.mp3"
     q "SCREEEEEEEEECH!"
     "A loud cry sounded from above. I tried to twist my head to look towards the ceiling, but the black shadow has already filled my vision."
 
     s "What was-"
 
+    play sound "audio/flapping.mp3"
     "A whoosh of wind blew past and I could feel the cage rising into the air."
     mc "Woah."
     "Looking up, I finally see the huge (sharp) claws were clamping tight to the top of the cage."
@@ -349,10 +354,12 @@ label day1:
     with fade
 
     play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
+    play sound "audio/bird_crowd.mp3"
 
     q "So she's the example?"
     q2 "Is she the petty thief?"
     q "She doesn't look like one though..."
+    play sound "audio/bird_crowd.mp3"
     q2 "Oh my god!! Judge Fleur brought her here~"
     q "I LOVE YOU FLEUUUUUUUR!"
     "Have I been saved?! My heart was thumping with adrenaline but now I'm finally calming down again."
@@ -378,6 +385,7 @@ label day1:
     "Ouch."
     b "As I was saying, all in favor for making her an example here and now, say AYE."
 
+    play sound "audio/bird_crowd.mp3"
     q "AYE!"
     q2 "AYYYYYYEEEE-"
     
@@ -489,6 +497,7 @@ label day1b:
             mc "Yeah... for... sure..."
             "God, the bird should be here anytime n-"
 
+            play sound "audio/caw.mp3"
             q "SCREEEEEEEEECH!"
             "There she is."
 
@@ -519,10 +528,11 @@ label day1b:
             with fade
 
             play music "audio/bird.ogg" fadeout 1.0 fadein 1.0
-
+            play sound "audio/bird_crowd.mp3"
             q "So she's the example?"
             q2 "Is she the petty thief?"
             q "She doesn't look like one though..."
+            play sound "audio/bird_crowd.mp3"
             q2 "Oh my god!! Judge Fleur brought her here~"
             q "I LOVE YOU FLEUUUUUUUR!"
 
@@ -556,6 +566,7 @@ label day1b:
 
             b "Fine. Motion to investigate this new, so-called, crime? All in fa-"
             
+            play sound "audio/bird_crowd.mp3"
             q "AYYYYYEE~"
             q2 "AYE!"
             mc "LET'S GOOOOOOOOO!" with hpunch
@@ -843,6 +854,7 @@ label day2b:
     b "Everyone is reserved the right to due process."
     b "But considering what you've done here, I'm willing to skip the formalities."
 
+    play sound "audio/flapping.mp3"
     "Fleur draws her weapon."
     s "Finally ready to stop running, huh?"
     "The two begin their duel. It's fierce, but it doesn't look like either one of them is winning."
@@ -977,6 +989,7 @@ label day3:
     mc "Goodbye Zuru."
     s "What are you talking about-"
     "I begin to scream at the top of my lungs."
+    play sound "audio/flapping.mp3"
     mc "FLEUR!!!!! RUN!!!!!!" with hpunch
 
     show zuru angry at centerright
@@ -1064,7 +1077,9 @@ label day3b:
     s "Wow. That's pretty amazing. Please do so! Those journals may have something important in them."
     b "Gladly. Hear, please allow me"
     "Fleur tenderly cups Zuru's ears. I watch silently for a moment before realizing what is to come."
+    play sound "audio/caw.mp3"
     b "SCRAAAAAWWWWW" with hpunch
+    play sound "audio/flapping.mp3"
     "The air erupts into daggers. I clutch at my mouse ears in agony."
     mc "HEY! A WARNING WOULD BE NICE NEXT TIME!" with vpunch
 
@@ -1134,7 +1149,9 @@ label day3b:
 
             b "Hmm...you're right"
             "Holy shit she bought it"
+            play sound "audio/caw.mp3"
             "A screech is heard above us followed by the flapping of wings."
+            play sound "audio/flapping.mp3"
             mc "That's your cue."
             b "You're right"
             "She hugs me"
@@ -1178,7 +1195,9 @@ label day3b:
 
             show fleur blush at common
             #Blush birb
+            play sound "audio/caw.mp3"
             "A screech is heard above us followed by the flapping of wings."
+            play sound "audio/flapping.mp3"
             mc "Come. Take my hand. Your messenger arrives. Let us speak with Zuru."
             "She takes my hand."
             "We walk towards Zuru, fingers interlaced."
