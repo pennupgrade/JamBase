@@ -403,10 +403,20 @@ label day1c:
 
             q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes--"
             "Snake aims a devastating blow at the girl's head"
-            s "I'll turn you into poultry!"
-            b: "Shown your true colors, huh? Very well!"
-            "Bird draws her weapon, and the two engage in combat."
-            # jump to something
+            s "I'll never forgive you!"
+            b: "Shown your true colors, huh?"
+            s: "Shut up! I'll turn you into poultry!"
+            b: "And I'll turn you in to law enforcement! See you in court!"
+            "Bird unfurls her wings and flies off."
+            s: "Argh!"
+            "Panting, I finally catch up to Snake."
+            mc: "Woah, you alright there?"
+            s: "Cease your pleasantries."
+            mc: "Y-yeah! That darn bird! So, am I off the hook? Can I go?"
+            s: "We can talk about that another time. Right now, it is time to avenge my father--"
+            s: "-- and your instructor."
+            mc: "Ah."
+            # jump to nest
 
         "I'm having trouble remembering... maybe that girl over there knows something?":
 
@@ -500,7 +510,7 @@ label day2:
 
 label day2b:
 
-    scene bg birdnest
+    scene bg birdnest_with_egg
     with fade
 
     # TODO: the first time mc arrives at the birdnest with the snake
@@ -513,6 +523,83 @@ label day2b:
         # choice 2-
         # mc chooses to step back & dies with the battling duo END
 
+    mc: "Ok, so, we're at her house. What's the plan here? Wait around the corner and beat her up when she gets home from work?"
+    s: "An eye for an eye."
+    "Snake turns her gaze to the eggs."
+    "Oh. The plan is infanticide."
+    "Ok, I'm not about to go from alleged to {i}actual{/i} murderer. I gotta get out--"
+    s: "Stop glancing around and dragging your feet. Revenge is our singular goal."
+    mc: "O-oh, I just... uh..."
+    mc: "Still... miss him, you know?"
+
+    "Snake's expression softens."
+    s: "I... apologize for my roughness. I have... also been affected by his passing."
+    s: "We'll turn these eggs into blueberry muffins, just like he would've wanted, right?"
+    mc: "Y-yeah, for sure."
+
+    scene bg birdnest
+    with fade
+
+    "Snake snatches the eggs, cracks them open, then carefully dumps their contents into a bottle."
+    "She smiles at me, holding out the bottle of child juice."
+    s: "Would you do the honors of separating the yolks from the whites?"
+    mc: "Uh, maybe later. For now, let's get out here--"
+    b: "I should've known."
+    
+    "Oooof course."
+
+    show bird sad.
+
+    s: "Ha! Now you can experience the loss of a loved one."
+    b: "I've not the foggiest idea of what I've done to you.
+    b: "Everyone is reserved the right to due process."
+    b: "But considering what you've done here, I'm willing to skip the formalities."
+
+    "Bird draws her weapon."
+    s: "Finally ready to stop running, huh?"
+    "The two begin their duel. It's fierce, but it doesn't look like either one of them is winning."
+    menu:
+        "I'm out of here!":
+            "I take a few cautious steps back."
+            mc: "I'm gonna leave you two to it..."
+            s: "What are you doing!? Think of him! Think of vengeance."
+            b: "Oh? This little one means something you?"
+            b: "I'll give you an {i}actual{/i} reason to hate me."
+            "A sharp pain erupts from my back. Strength leaves my whole body.
+            s: "You'll pay for that!"
+            "Bleeding out, you watch two warriors savagely fight over a misunderstanding."
+            
+            scene black
+            with fade
+
+
+        "Flying is weak to rock!":
+            "Frantically looking around the area, I try to find anything heavy enough to deal some damage."
+            "I settle on a rock about the size of my head."
+            mc: "What am I even doing? I'm no fighter. The most fighting I've done in my life is killing unborn children for a chance at saving myself. I am not a good person"
+            "Snake, in the midst of battle notices your courage."
+            s: "{i}Though not related by blood, She is risking her life for my father's sake all the same... she's such a good person...{/i}"
+            "She feels a warm energy swell up inside of her, and summons new strength."
+            "She manages to overpower Bird, knocking her to the ground. Coincidentally, right at me feet."
+            mc: "Jesus, I can not hold this rock any longer...!"
+            "I drop the rock. Coincidentally, right onto Bird's head. With a squawk, she stops moving."
+            mc: "Oh my god."
+
+            s: "I..."
+            s: "Words cannot describe my gratitude to you."
+            s: "You have not only found my father's killer, but you have also avenged him with your own two hands."
+            mc: "No, uh, if the police come, we'll say you did that."
+            s: "You are too kind. But it was you who dealt the final blow."
+            mc: "No really, I insist."
+            "Snake laughs."
+            s: "Beat at ease. I will formally acquit you of your crimes when we get back."
+            s: "But first..."
+            mc: "But first?"
+            s: "Would you be so kind as to... show me my father's baking technique?"
+            mc: "W-with pleasure! Don't expect too much though."
+
+            "I make my way back to the snake village a free woman."
+
     return
 
 label day3:
@@ -522,7 +609,5 @@ label day3:
     # TODO: the last time mc arrives at the cage with the bird
     # should have the bird kill the snake (after seeing the snake break their eggs_)
     # should end with bird killing snake
-
-
 
     return
