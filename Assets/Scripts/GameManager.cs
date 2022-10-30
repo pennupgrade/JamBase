@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
             {
                 gameOver = true;
             }
-            scoreText.text = "" + (int) score * 100f;
+            scoreText.text = "" + (int) (score * 10f);
         }
         else
         {
