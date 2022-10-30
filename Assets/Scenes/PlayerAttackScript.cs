@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayerAttackScript : MonoBehaviour
 {
-    private float playerAttack = 1;
+    private float playerAttack = 2.5f;
     public PlayerScript player;
-    //public BossScript boss; Add reference to boss
+    public BossScript boss;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 0.15f);
+        boss = FindObjectOfType<BossScript>();
+        Destroy(this.transform.parent.gameObject, 0.5f);
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class PlayerAttackScript : MonoBehaviour
     {
         if (hit.gameObject.tag == "boss")
         {
-            //call function in boss to reduce boss health
+            boss.getHit(playerAttack);
         }
     }
 }
