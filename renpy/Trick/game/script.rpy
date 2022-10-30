@@ -30,7 +30,7 @@ define gui.text_font = "gui/font/OpenSans-Medium.ttf"
 init python:
 
     # Characters
-    s = Character("Snake",  color="#c8ffc8")
+    s = Character("Zuru",  color="#c8ffc8")
     b = Character("Bird", color="#c8f5ff")
     mc = Character('Me', color="#c8c8ff")
     q = Character('???', color="#babac2")
@@ -72,13 +72,13 @@ label day0:
     $ q_name = "Guard"
     q "Better?"
     "Owwww, that's bright... what time is it? How long did I sleep..."
-    q "They told me mice like you are more fragile than a pile of wooden sticks- Commander snake would kill me if you shriveled up in the dark or something."
+    q "They told me mice like you are more fragile than a pile of wooden sticks- Commander Zuru would kill me if you shriveled up in the dark or something."
 
     "A snake? I need to find out how I got here."
     "Last I remember, I was going diving into a dumpster to rest for the night after completing my daily goal of looting from the birds' grain stash."
     "This doesn't make sense though: I was just in bird territory, how did this snake get here?"
 
-    q "Haah, you should know how much effort Snake took to find you though."
+    q "Haah, you should know how much effort Zuru took to find you though."
     q "It's tough to snoop around under the gazes of these birds."
     
     "Great, they definitely picked up my sleeping body and dragged me here."
@@ -91,15 +91,15 @@ label day0:
     q "Oh here: brought you some cheese."
     "T-that looks nasty. They did peel this m-moldy cheese off some dirty sidewalk?"
 
-    q "You should be so grateful that Commander Snake granted you what your kind enjoys for a last meal."
+    q "You should be so grateful that Commander Zuru granted you what your kind enjoys for a last meal."
     q "You ought to get some meat on those bones before we- oh!"
 
-    show snake happy at centerleft
+    show zuru happy at centerleft
 
     s "Tsk."
-    q "Commander Snake! I'll leave her to you."
+    q "Commander Zuru! I'll leave her to you."
     hide guard with moveoutright
-    show snake happy at common
+    show zuru happy at common
 
     "So she's the so-called commander calling the shots."
     "I can't tell if she's angry at me, or if she just looks like that normally..."
@@ -152,19 +152,20 @@ label day0:
             "Her what now?"
             "Scared, I backed to the edge of the cage, but I couldn't avoid her snakey bite."
 
+            hide zuru with moveoutbottom
+            scene bg cage dark
+
             mc "..."
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
 
-    hide snake with moveoutbottom
-    scene bg cage dark
     $ persistent.day = 1
     return
 
 label day1:
 
     scene bg cage light with vpunch
-    show snake happy with moveinleft
+    show zuru happy with moveinleft
 
     scene bg cage dark with hpunch
     show guard angry
@@ -180,12 +181,12 @@ label day1:
     show guard angry at common
     q "Better?"
     "{i}(Haven't I heard this before...?){/i}"
-    q "They told me mice like you are more fragile than a pile of wooden sticks- Commander Snake would kill me if you shriveled up in the dark or something."
+    q "They told me mice like you are more fragile than a pile of wooden sticks- Commander Zuru would kill me if you shriveled up in the dark or something."
 
-    "Commander Snake? That name makes me shiver..."
+    "Commander Zuru? Hearing that name makes me shiver..."
     "I never want to be in that moist tunnel of hers again."        
 
-    q "Haah, you should know how much effort Snake took to find you though."
+    q "Haah, you should know how much effort Zuru took to find you though."
 
     "{i}(I've definitely heard these exact words just yesterday.){/i}"
     "His next line starts with \"It's tought to snoop around\"..."
@@ -200,7 +201,7 @@ label day1:
     q "Huh? How did you know I was going to get the cheese?"
     mc "No reason. Can you let me out of this cage?"
 
-    q "Of course I can't! Commander Snake will kill me."
+    q "Of course I can't! Commander Zuru will kill me."
     "Worth a try."
 
     q "You can only ask her and hope."
@@ -208,12 +209,12 @@ label day1:
     "Looks like I had no chance with this puny of a guard."
 
     show guard happy at centerright
-    show snake happy at centerleft
+    show zuru happy at centerleft
 
     s "Tsk."
     q "Commander Snake! I'll leave her to you."
     hide guard with moveoutright
-    show snake happy at center
+    show zuru happy at center
 
     mc "Hold on- Before you say anything."
     "This stupid move will either get me killed or save my life."
@@ -252,7 +253,7 @@ label day1:
     "I going to keep dragging this snake along with me until nightfall, even if I die."
 
     scene bg cage light with easeinbottom
-    show snake sad at center
+    show zuru sad at center
 
     s "I do rather miss him..."
     mc "Condolences... I also remember when he would bake for his students."
@@ -290,12 +291,55 @@ label day1:
     q "So she's the example?"
     q2 "Is she the petty thief?"
     q "She doesn't look like one though..."
+    "Have I been saved?! My heart was thumping with adrenaline but now I'm finally calming down again."
 
-    # TODO: the first time mc is brought to the bird court
-    # should end with bird killing mc
+    show bird happy at common
 
+    b "Quiet in the court! We have an important matter to discuss."
+    b "Our esteemed, or shall I say long awaited, guest has finally arrived."
+    "Oh- I feel honored! She really went through all the effort of bringing me here from the snake's grasps."
+    "She looks so nice <3"
+
+    b "We are all gathered here today to trial her innocence."
+    b "As you all have learned, this little mouse is suspect for plundering our depository of our winter grains!"
+    "Oh wow. She's actually accusing me of something I did do this time."
+    "Haha... H-how do I get out of it this time."
+
+    b "We must make her an example for all future fiends that dare trespass our clan's lands are punished as example."
+    "W-wait they're gonna punish me?"
+
+    mc "U-um can say that I am grateful for you saving me but I'm not into th-"
+
+    b "Quiet. Motion to speak {b}denied{/b}."
+    "Ouch."
+    b "As I was saying, all in favor for making her an example here and now, say AYE."
+
+    q "AYE!"
+    q2 "AYYYYYYEEEE-"
     
+    b "All against, say NAY?"
 
+    q "..."
+    "..."
+    mc "Nay?"
+
+    b "Looks like we have come to an overwhelming, if not unanimous decision:"
+    b "I will now deliver the punishment."
+    "I look over at the bird in fear and suddenly, she looks back and our eyes meet."
+    
+    mc "Uh oh."
+    "I don't like that look."
+    "I just saw it yesterday... I'm not ready to go through this again..."
+
+    b "Aaaa-"
+    "Yup. Against all expectations, I'm getting picked up again-"
+    "And yuuuuup. I guess I am going down the hatch. Yet again."
+
+    hide bird with moveoutbottom
+    scene bg cage dark
+
+    "Guess this really is farewell once again."
+    "Hope her stomach acids end my pain quickly-"
     
     $ persistent.day = 1
     return
@@ -336,30 +380,41 @@ label day2:
     # they are investingating the scene together
     # should see the snake already at the scene as mc + bird approach
 
-    b "Uh"
-    b "What am I supposed to be looking at here."
+    b "Uh,"
+    b "what am I supposed to be looking at here."
+    
+
     mc "Why, this is the site of a heinous crime."
+
     b "Heinous?"
     mc "Oh yes. An act so wretched it would make your toes curl."
     b "Hey watch it with the references to my feet. Also why are you talking like that?"
+
     menu:
-        mc "A different writer is writing my dialogue now"
+
+        "A different writer is writing my dialogue now":
+
             b "Oh I see so this is just a joke to you"
-        mc "This is how I always talk"
+
+        "This is how I always talk":
+
             b "Don't play coy with me. Something's up"
+
     mc "This is getting away from the point"
     mc "Look over there!"
     b "Huh"
     
-    show snake sad at centerleft
+    show zuru sad at centerleft
 
     mc "Peer upon thy serpentine maiden over yonder"
+
     b "She seems nice enough. What about her?"
     
     menu:
         # choice 1-
         # should end with the mc framing the snake as the killer of her own father
-        mc "She killed her father here"
+        "She killed her father here":
+        
             b "She WHAT"
             mc "Don't let her distinguished appearnce fool you; she's a bona fide killer."
             b "How could you have known this."
@@ -371,7 +426,9 @@ label day2:
             b "Theft is nothing in the face of this atrocity"
             "Score for me."
             mc "Then I know just want to do"
+
             jump day3
+
         # choice 2-
         # should end with the mc & snake approaching snake & recruiting snake
 
