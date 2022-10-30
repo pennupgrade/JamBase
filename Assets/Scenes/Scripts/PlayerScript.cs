@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private float health = 100;
+    private float health = 50;
     private float attack = 1;
     private float velocity = 16;
     public float jumpForce = 30 ;
@@ -94,6 +94,13 @@ public class PlayerScript : MonoBehaviour
         hitbox.enabled = true;
     }
 
+    IEnumerator waitColor(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+    }
+
     public void getHit(float damage)
     {
         health -= damage;
@@ -106,7 +113,9 @@ public class PlayerScript : MonoBehaviour
             body.AddForce(Vector3.up * damageForce, ForceMode2D.Impulse);
             canInput = false;
             hitbox.enabled = false;
-            StartCoroutine(recoverInputHit(0.2f));
+            this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0.2f, 0.2f);
+            StartCoroutine(recoverInputHit(0.35f));
+            StartCoroutine(waitColor(0.2f));
             StartCoroutine(recoverHitboxHit(1f));
         }
     }

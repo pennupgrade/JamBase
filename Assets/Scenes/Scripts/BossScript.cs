@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
-    private float health = 500;
+    private float health = 700;
     private float timer;
     private float angle = 0;
     private bool dir = true;
@@ -13,15 +13,16 @@ public class BossScript : MonoBehaviour
     public PlayerScript player;
 
     public LaserMoveScript laser;
-    public LaserMoveScript trickLaser;
+    public TrickLaserScript trickLaser;
     public GameObject staticLaser;
     public GameObject trickStaticLaser;
     public Animator animator;
     private bool isAlive = true;
+    private int phase = 0;
 
     public bool getIsEnraged()
     {
-        return (health <= 300);
+        return (phase == 1);
     }
 
     IEnumerator waitColor(float time)
@@ -34,12 +35,8 @@ public class BossScript : MonoBehaviour
     public void getHit(float damage)
     {
         health -= damage;
-        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0.7f, 1);
-        StartCoroutine(waitColor(0.1f));
-        if (health <= 300)
-        {
-            animator.SetBool("enraged", true);
-        }
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 1);
+        StartCoroutine(waitColor(0.2f));
         if (health <= 0)
         {
             animator.SetBool("dead", true);
@@ -50,6 +47,7 @@ public class BossScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        move();
         timer = 2;
     }
 
@@ -58,6 +56,11 @@ public class BossScript : MonoBehaviour
     {
         if (timer <= 0 && isAlive)
         {
+            if (health <= 450 && phase == 0)
+            {
+                phase = 1;
+                animator.SetBool("enraged", true);
+            }
             if (moveCount <= 0)
             {
                 Debug.Log("Move");
@@ -67,7 +70,7 @@ public class BossScript : MonoBehaviour
             }
             else
             {
-                int random = Random.Range(0, 5);
+                int random = Random.Range(2, 5);
                 if (random == 0)
                 {
                     Debug.Log("Laser");
@@ -215,7 +218,7 @@ public class BossScript : MonoBehaviour
     void trickLaserAttack()
     {
         randomizeDir();
-        LaserMoveScript laserInstance = Instantiate(trickLaser, this.gameObject.transform);
+        TrickLaserScript laserInstance = Instantiate(trickLaser, this.gameObject.transform);
         if (dir)
         {
             laserInstance.changeDir();
@@ -224,7 +227,7 @@ public class BossScript : MonoBehaviour
         laserInstance.transform.Rotate(0, 0, startAngle);
         for (int i = 0; i < 7; i++)
         {
-            LaserMoveScript nextLaserInstance = Instantiate(laser, this.gameObject.transform);
+            TrickLaserScript nextLaserInstance = Instantiate(trickLaser, this.gameObject.transform);
             nextLaserInstance.transform.Rotate(0, 0, startAngle + 45 * (i + 1));
             if (dir)
             {
@@ -291,12 +294,12 @@ public class BossScript : MonoBehaviour
 
     void trickRadianceLaser()
     {
-        GameObject laserInstance = Instantiate(staticLaser, this.gameObject.transform);
+        GameObject laserInstance = Instantiate(trickStaticLaser, this.gameObject.transform);
         int startAngle = Random.Range(0, 360);
         laserInstance.transform.Rotate(0, 0, startAngle);
         for (int i = 0; i < 7; i++)
         {
-            GameObject nextLaserInstance = Instantiate(staticLaser, this.gameObject.transform);
+            GameObject nextLaserInstance = Instantiate(trickStaticLaser, this.gameObject.transform);
             nextLaserInstance.transform.Rotate(0, 0, startAngle + 45 * (i + 1));
         }
     }

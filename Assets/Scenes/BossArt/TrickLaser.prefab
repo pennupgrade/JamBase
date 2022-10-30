@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7917328244621888495}
-  - component: {fileID: 7917328244621888488}
+  - component: {fileID: 131386832209108543}
   m_Layer: 0
   m_Name: TrickLaser
   m_TagString: boss_attack
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7917328244621888488
+--- !u!114 &131386832209108543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7917328244621888494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353235e2e2a7c0547925d9a3e6fb6c12, type: 3}
+  m_Script: {fileID: 11500000, guid: ae189d265c2b43b4aa504176bdd625be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7917328244704323221
@@ -137,7 +137,7 @@ Animator:
   m_GameObject: {fileID: 7917328244704323221}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1e22f04116979214eb0f107894cdd515, type: 2}
+  m_Controller: {fileID: 9100000, guid: 072bfed4092f9b944848c7704d5f02b9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

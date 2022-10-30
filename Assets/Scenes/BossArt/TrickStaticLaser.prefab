@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3905312347571081283}
   - component: {fileID: 3905312347571081281}
-  - component: {fileID: 5638958384596321438}
+  - component: {fileID: 4517330954014407068}
   m_Layer: 0
   m_Name: LaserChild
   m_TagString: boss_attack
@@ -59,7 +59,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5638958384596321438
+--- !u!114 &4517330954014407068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,10 +68,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3905312347571081282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a740873c700fdb47a1ba260e35c7884, type: 3}
+  m_Script: {fileID: 11500000, guid: 45662911cc4c2424eba9c43be23b69ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3419724437629347321, guid: 55dac7096de2d9949a69f7cf4c446faf, type: 3}
+  player: {fileID: 0}
 --- !u!1 &3905312349326731943
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ Animator:
   m_GameObject: {fileID: 3905312349326731943}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6678f0bb758b95844b2bfc6d333d1789, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0ecc13b0cbf7ba74cae6a072b7a7db47, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
