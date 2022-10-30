@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999926881772588741}
   m_LocalRotation: {x: -0, y: -0, z: -0.1117739, w: 0.9937337}
-  m_LocalPosition: {x: 1.467, y: -0.039, z: 1.28}
+  m_LocalPosition: {x: 1.467, y: -0.039, z: -1}
   m_LocalScale: {x: 10.161635, y: 2.6553507, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -299,7 +299,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.047840983}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -310,7 +310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.0956817}
   m_EdgeRadius: 0
 --- !u!1001 &3057706189690357619
 PrefabInstance:
@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bayo Melee
       objectReference: {fileID: 0}
+    - target: {fileID: 5264616228802369161, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -611077297, guid: 2f5661814a3f5d9479d769cc811971dd, type: 3}
     - target: {fileID: 5264616228802369162, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -424,8 +428,20 @@ PrefabInstance:
       value: 0.94951105
       objectReference: {fileID: 0}
     - target: {fileID: 5264616228802369165, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8885065
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264616228802369165, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
       propertyPath: m_Offset.x
       value: -0.3541342
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264616228802369165, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.09068009
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264616228802369165, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.62068963
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77fa8025ed962a046bd60aff8db3732c, type: 3}

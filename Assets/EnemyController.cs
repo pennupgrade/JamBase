@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
+    [SerializeField] AudioSource theMusic;
     [SerializeField] GameObject light1;
     [SerializeField] GameObject light2;
     [SerializeField] GameObject light3;
@@ -12,13 +13,17 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] GameObject rightSpawn;
     [SerializeField] GameObject player;
     [SerializeField] GameObject spawnCooldown;
+    //[SerializeField] TextMesh ;
     private Queue<GameObject> enemyQueue;
+    private bool enemyQueued;
     private GameObject firstEnemy;
-    public int score; 
+    public int score;
+    private float timeCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        theMusic.Play();
         enemyQueue = new Queue<GameObject>();
         GameObject newEnemy = GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform);
         newEnemy.GetComponent<EnemyPatrol>().SetEndPoints(leftSpawn.transform, rightSpawn.transform);
@@ -31,11 +36,26 @@ public class EnemyController : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.N)) {
-           GameObject newEnemy = GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform);
-            newEnemy.GetComponent<EnemyPatrol>().SetEndPoints(leftSpawn.transform, rightSpawn.transform);
-            enemyQueue.Enqueue(newEnemy);
+        timeCount += Time.deltaTime;
 
+
+        if (Mathf.FloorToInt(timeCount % 60) % 10 == 0) {
+            if (!enemyQueued) {
+                int spawn = Random.Range(1, 3);
+                enemyQueued = true;
+                GameObject newEnemy = new GameObject();
+                if (spawn == 1) {
+                    newEnemy = GameObject.Instantiate(enemyPrefab, leftSpawn.transform.position, Quaternion.identity, this.transform);
+                } else {
+                    newEnemy = GameObject.Instantiate(enemyPrefab, rightSpawn.transform.position, Quaternion.identity, this.transform);
+                }
+                
+                newEnemy.GetComponent<EnemyPatrol>().SetEndPoints(leftSpawn.transform, rightSpawn.transform);
+                enemyQueue.Enqueue(newEnemy);
+            }
+
+        } else {
+            enemyQueued = false; 
         }
 
         lightQueue(light1);

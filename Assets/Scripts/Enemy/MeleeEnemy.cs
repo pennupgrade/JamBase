@@ -34,12 +34,14 @@ public class MeleeEnemy : MonoBehaviour
         
         cooldownTimer += Time.deltaTime;
 
-        if(PlayerInSight()){
+        DamagePlayer();
+        
+        /*if(PlayerInSight()){
             if(cooldownTimer >= attackCooldown){
             cooldownTimer = 0; 
             anim.SetTrigger("melee");
         }
-        }
+        }*/
 
         if(enemyPatrol!=null){
             enemyPatrol.enabled = !PlayerInSight();
