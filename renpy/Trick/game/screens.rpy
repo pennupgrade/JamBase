@@ -285,6 +285,8 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+
+
 screen navigation():
 
     vbox:
@@ -348,13 +350,17 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+default persistent.lastending = ""
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    if persistent.haremendreached:
-        add gui.main_menu_background
+    if persistent.lastending == "0":
+        add "gui/main_menu_zuru.png"
+    elif persistent.lastending == "1":
+        add "gui/main_menu_fleur.png"
     else:
         add gui.main_menu_background
 
