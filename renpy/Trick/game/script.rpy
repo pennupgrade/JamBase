@@ -74,7 +74,7 @@ label day0:
     "Owwww, that's bright... what time is it? How long did I sleep..."
     q "They told me mice like you are more fragile than a pile of wooden sticks- Commander Zuru would kill me if you shriveled up in the dark or something."
 
-    "A snake? I need to find out how I got here."
+    "I need to find out how I got here."
     "Last I remember, I was going diving into a dumpster to rest for the night after completing my daily goal of looting from the birds' grain stash."
     "This doesn't make sense though: I was just in bird territory, how did this snake get here?"
 
@@ -89,7 +89,7 @@ label day0:
     show guard happy at centerright
 
     q "Oh here: brought you some cheese."
-    "T-that looks nasty. They did peel this m-moldy cheese off some dirty sidewalk?"
+    "T-that looks nasty. Did they peel this m-moldy cheese off some dirty sidewalk?"
 
     q "You should be so grateful that Commander Zuru granted you what your kind enjoys for a last meal."
     q "You ought to get some meat on those bones before we- oh!"
@@ -139,7 +139,7 @@ label day0:
     "She looks like she won't budge at all."
     
     s "So you accept your fate."
-    s "My patience have run thin."
+    s "My patience has run thin."
     s "I will ask one last time: {b}how did you do it{/b}?"
 
     menu:
@@ -150,7 +150,7 @@ label day0:
             s "Say farewell as I make you my dinner."
             
             "Her what now?"
-            "Scared, I backed to the edge of the cage, but I couldn't avoid her snakey bite."
+            "Scared, I backed to the edge of the cage, but I can't avoid her snakey bite."
 
             hide zuru with moveoutbottom
             scene black with fade
@@ -202,7 +202,7 @@ label day1:
     "Worth a try."
 
     q "You can only ask her and hope."
-    q "I can't wait to see how that would turn out haha."
+    q "I can't wait to see how that would turn out, haha."
     "Looks like I had no chance with this puny of a guard."
 
     show guard happy at centerright
@@ -239,7 +239,7 @@ label day1:
     with fade
 
     mc "I was just as close as you were to him."
-    mc "We would often take strolls to the city often."
+    mc "We would often take strolls to the city."
 
     s "You mean that forest path near his place? I remember when he would take me and his other students there too."
 
@@ -247,21 +247,22 @@ label day1:
 
     "Bingo! I hit the it on the mark."
     "I'm sure it has been least an hour since I started talking..."
-    "I going to keep dragging this snake along with me until nightfall, even if I die."
+    "I'm going to keep dragging this snake along with me until nightfall, even if I die."
 
     scene bg cage light with easeinbottom
     show zuru sad at center
 
     s "I do rather miss him..."
-    mc "Condolences... I also remember when he would bake for his students."
+    "Zuru turned her face away from you, trying to hide her very obvious tears"
+    mc "My condolences... I also remember when he would bake for his students."
 
     s "Did he?"
-    mc "Y-yeah! He started just two weeks ago, he wanted to keep it a secret from you and surprise you."
+    mc "Y-yeah! He started just two weeks ago. He wanted to keep it a secret from you and surprise you."
     mc "But I guess he never got the chance."
     "P-phew, saved myself there. Making up this much backstory takes up so much effort... I'm sweating."
 
     s "I... guess..."
-    s "You were so close to him so you must know who killed him, right?"
+    s "You were so close to him, so you must know who killed him, right?"
     s "Also... can't you also be-?"
 
     q "SCREEEEEEEEECH!"
@@ -304,10 +305,10 @@ label day1:
     "Oh wow. She's actually accusing me of something I did do this time."
     "Haha... H-how do I get out of it this time."
 
-    b "We must make her an example for all future fiends that dare trespass our clan's lands are punished as example."
+    b "We must make her an example that all fiends who dare trespass our clan's lands are punished accordingly."
     "W-wait they're gonna punish me?"
 
-    mc "U-um can say that I am grateful for you saving me but I'm not into th-"
+    mc "U-um can I say that I am grateful for you saving me but I'm not into th-"
 
     b "Quiet. Motion to speak {b}denied{/b}."
     "Ouch."
@@ -397,20 +398,29 @@ label day1b:
     show zuru sad at common
 
     mc "Holy crap... I'm losing my voice..."
-    "{i}(...and my will to live to be honest.)"
-    s "{i}Hic...{/i}"
-    "Now that I've gotten her guard down, what should I do?"
+    "{i}(...and my will to live to be honest.){/I}"
+    s "{i}Hic...{/i} W-well... with this much specific information about my father I know you at least aren't completely lying through your teeth."
+    mc "I would never. So, uh... Can you let me out."
+
+    "Zuru's eyes grow stern."
+    s "I... cannot do that. You are under our custody."
+
+    "Whoops. Overstepped a little."
+    "Rats. I've gotten her guard down, but not quite enough. What should I do?"
 
     menu:
 
         "{i}(I should use her against Fleur.)":
 
-            mc "Can you give me some time to grief too?"
-            "I would like to take a breath of fresh air."
+            "Right, that bird should be coming soon. Just a few more stories about old man stuff."
+            mc "Well, I'll tell you a little more about your father then."
+            "Another hour of "
 
-            s "{i}Hic...{/i} S-sure thing..."
-            
-            "The bird should be here anytime n-"
+            mc "(hoarse) And then his skin shed like crazy and he went 'Woah! I'm peeling like a banana to peel on you!'"
+            s "I... did not know my father to have such a sense of humor. A man of many sides, it appears."
+
+            mc "Yeah... for... sure..."
+            "God, the bird should be here anytime n-"
 
             q "SCREEEEEEEEECH!"
             "There she is."
@@ -484,13 +494,15 @@ label day1b:
 
             jump day2
 
-        "{i}(I can get her to do my bidding.)":
+        "{i}(I can press a little more!)":
 
             mc "H-hey, you want to know who is your father's real killer, right?"
-            s "Of course!"
+            "Zuru perks up."
+            s "Of course."
 
-            mc "Can you take me to the crime scene then? We can search for some more evidence."
-            s "Sure, come with me."
+            mc "If you take me to the crime scene, I can point out which way they went."
+            "Zuru ponders for a moment."
+            s "Fine. Come with me."
 
             jump day1c
 
@@ -519,23 +531,25 @@ label day1c:
 
     show zuru happy with moveinleft
 
+    "While walking, Zuru has clearly composed herself and is back in {s}girlboss{/s} commander mode."
     s "Well, here we are. Let's do this quickly, I'd... rather not spend too much time here."
 
     mc "Yes, yes, he was a great man. I remembered his blueberry muffins so fondly."
-
+    
     s "...Right."
+    "Looks like she still doesn't quite buy that one."
+
     s "Well, out with it then. Which way did the culprit go?"
 
-    "Yeesh, right to business."
+    "Yeesh, right to business. Uh, "
     mc "Hm... I'm, uh, having trouble remembering."
     mc "You know, because I was knocked out and captured. Thanks for that."
     
     s "{i}Sighs{/i} Out with it."
     "I need something to work with here..."
-
-    mc "Uh, so there was this girl, right? And, uh..."
     
-    "In the distance, I see someone else approaching the crime scene."
+    "Out of the corner of your eye, you see something-- someone, flying through the trees."
+    "That's right, Fleur!"
 
     menu:
 
@@ -544,17 +558,17 @@ label day1c:
             show zuru angry at common
             "I knew it. That rotten bird clan!"
             hide zuru with moveoutright
-            "Zuru lunges towards the figure, weapon at the ready."
+            "In a flash, Zuru scales a tree lunges towards the figure, weapon at the ready."
 
             show zuru angry
             show fleur happy
 
             q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes--"
-            "Zuru aims a devastating blow at the girl's head"
+            "Zuru aims a devastating blow at the bird's head."
             q "Shown your true colors, huh?"
             s "Shut up Fleur! I'll turn you into poultry!"
             b "And I'll turn you in to law enforcement! See you in court!"
-            "Fleur unfurls her wings and flies off."
+            "Fleur flies high, out of the reach of the trees, and back towards the clear"
             s "Argh!"
             "Panting, I finally catch up to Zuru."
             mc "Woah, you alright there?"
@@ -565,24 +579,30 @@ label day1c:
             mc "Ah."
             # jump to nest
 
-        "I'm having trouble remembering... maybe that girl over there knows something?":
+        "I'm having trouble remembering... maybe that bird up there might know something?":
 
+            mc "I mean she must have a pretty good view of things."
             s "...Very well then."
             hide zuru with moveoutright
-            "As Zuru walks off, I hear her mutter something about hitting me a little too hard."
+            "As Zuru walks off, I hear her mutter something about the guards roughing me up a little too hard."
+            "She takes a big breath"
+            s "EXCUSE ME! WE HAVE A FEW QUESTIONS!"
+
+            "The bird is clearly startled, and flies into a tree."
+            mc "Ouch. That probably hurt."
 
             show fleur happy
-            "As we get closer, I see Zuru grimace."
+            "As the bird lands, I see Zuru grimace-- seems they know each other."
 
-            q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes."
-            s "I've no time for your banter for your banter, Fleur."
+            b "Ah, Commander Zuru. Such an ugly voice could only be yours."
+            s "I've no time for your banter, Fleur."
 
             "I lock eyes with Fleur, and her face hardens for just a second."
             "Oh, rats. I think she recognizes me."
 
             b "Why, I had no idea you were in good company with fugitives. Fitting."
             mc "Yeah, you'd never expect Commander Zuru to commit tax fraud, huh?"
-            s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge my father."
+            s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge the murder my father."
             s "Or rather she's a 'key witness in an ongoing murder case' in your bureaucratic terms."
             b "I never figured you one to even know words that long."
             s "And I never figured you one to obstruct justice. Cut the chatter. Did you see anything here?"
@@ -754,7 +774,7 @@ label day2b:
             b "I'll give you an {i}actual{/i} reason to hate me."
             "A sharp pain erupts from my back. Strength leaves my whole body."
             s "You'll pay for that!"
-            "Bleeding out, you watch two warriors savagely fight over a misunderstanding."
+            "Bleeding out, I watch two warriors savagely fight over a misunderstanding that I caused."
             
             scene black
             with fade
@@ -763,7 +783,7 @@ label day2b:
         "Flying is weak to rock!":
             "Frantically looking around the area, I try to find anything heavy enough to deal some damage."
             "I settle on a rock about the size of my head."
-            mc "What am I even doing? I'm no fighter. The most fighting I've done in my life is killing unborn children for a chance at saving myself. I am not a good person"
+            mc "What am I even doing? I'm no fighter. I was just not five minutes ago complicit in the murder of children. I am not a good person"
             "Zuru, in the midst of battle notices your courage."
             s "{i}Though not related by blood, She is risking her life for my father's sake all the same... she's such a good person...{/i}"
             "She feels a warm energy swell up inside of her, and summons new strength."
