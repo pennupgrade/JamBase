@@ -63,7 +63,7 @@ SGM soundfont
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Mansplain Manipulate Manslaughter"
+define build.name = "Mansplain_Manipulate_Manslaughter"
 
 
 ## Sounds and music ############################################################
