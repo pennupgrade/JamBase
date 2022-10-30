@@ -1038,6 +1038,7 @@ label day3:
     "Zuru looks at me in shock and despair. I sneak a grin before turning to my faux tears."
     b "YOU WILL DO NO FURTHER HARM ANYMORE INNOCENTS" with hpunch
     "Zuru meets my gaze. She's crying."
+    hide zuru with moveoutbottom
     s "Why you-"
     "There is a flash; the sound of a fleshy sploch. When I open my eyes, Zuru's head lies at my feet."
     b "Mouse."
@@ -1227,6 +1228,7 @@ label day3b:
             "She takes my hand."
             "We walk towards Zuru, fingers interlaced."
 
+            hide fleur
             show fleur blush at centerright
             show zuru happy at centerleft
             #Enter Neutral Snek
