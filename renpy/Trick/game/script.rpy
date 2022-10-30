@@ -31,7 +31,7 @@ init python:
 
     # Characters
     s = Character("Zuru",  color="#c8ffc8")
-    b = Character("Bird", color="#c8f5ff")
+    b = Character("Fleur", color="#c8f5ff")
     mc = Character('Me', color="#c8c8ff")
     q = Character('???', color="#babac2")
     q2 = Character('???', color="#88888f")
@@ -212,7 +212,7 @@ label day1:
     show zuru happy at centerleft
 
     s "Tsk."
-    q "Commander Snake! I'll leave her to you."
+    q "Commander Zuru! I'll leave her to you."
     hide guard with moveoutright
     show zuru happy at center
 
@@ -291,13 +291,15 @@ label day1:
     q "So she's the example?"
     q2 "Is she the petty thief?"
     q "She doesn't look like one though..."
+    q2 "Oh my god!! Judge Fleur brought her here~"
+    q "I LOVE YOU FLEUUUUUUUR!"
     "Have I been saved?! My heart was thumping with adrenaline but now I'm finally calming down again."
 
-    show bird happy at common
+    show fleur happy at common
 
     b "Quiet in the court! We have an important matter to discuss."
     b "Our esteemed, or shall I say long awaited, guest has finally arrived."
-    "Oh- I feel honored! She really went through all the effort of bringing me here from the snake's grasps."
+    "Oh- I feel honored! She really went through all the effort of bringing me here from that snake's grasps."
     "She looks so nice <3"
 
     b "We are all gathered here today to trial her innocence."
@@ -325,7 +327,7 @@ label day1:
 
     b "Looks like we have come to an overwhelming, if not unanimous decision:"
     b "I will now deliver the punishment."
-    "I look over at the bird in fear and suddenly, she looks back and our eyes meet."
+    "I look over at Fleur in fear and suddenly, she looks back and our eyes meet."
     
     mc "Uh oh."
     "I don't like that look."
@@ -335,7 +337,7 @@ label day1:
     "Yup. Against all expectations, I'm getting picked up again-"
     "And yuuuuup. I guess I am going down the hatch. Yet again."
 
-    hide bird with moveoutbottom
+    hide fleur with moveoutbottom
     scene bg cage dark
 
     "Guess this really is farewell once again."
@@ -369,7 +371,7 @@ label day1c:
         # choice 2-
         # should end with the mc & snake approaching bird & recruiting bird
 
-    show snake happy with moveinleft
+    show zuru happy with moveinleft
 
     s "Well, here we are. Let's do this quickly, I'd... rather not spend too much time here."
 
@@ -393,23 +395,22 @@ label day1c:
 
         "Oh, that's her! She was the killer!":
             
-            show snake angry at common
+            show zuru angry at common
             "I knew it. That rotten bird clan!"
-            hide snake with moveoutright
-            "Snake lunges towards the figure, weapon at the ready."
+            hide zuru with moveoutright
+            "Zuru lunges towards the figure, weapon at the ready."
 
-            show snake angry
-            show bird happy
+            show zuru angry
+            show fleur happy
 
-            q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes--"
-            "Snake aims a devastating blow at the girl's head"
-            s "I'll never forgive you!"
-            b: "Shown your true colors, huh?"
-            s: "Shut up! I'll turn you into poultry!"
+            q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes--"
+            "Zuru aims a devastating blow at the girl's head"
+            q: "Shown your true colors, huh?"
+            s: "Shut up Fleur! I'll turn you into poultry!"
             b: "And I'll turn you in to law enforcement! See you in court!"
-            "Bird unfurls her wings and flies off."
+            "Fleur unfurls her wings and flies off."
             s: "Argh!"
-            "Panting, I finally catch up to Snake."
+            "Panting, I finally catch up to Zuru."
             mc: "Woah, you alright there?"
             s: "Cease your pleasantries."
             mc: "Y-yeah! That darn bird! So, am I off the hook? Can I go?"
@@ -421,20 +422,20 @@ label day1c:
         "I'm having trouble remembering... maybe that girl over there knows something?":
 
             s "...Very well then."
-            hide snake with moveoutright
-            "As Snake walks off, I hear her mutter something about hitting me a little too hard."
+            hide zuru with moveoutright
+            "As Zuru walks off, I hear her mutter something about hitting me a little too hard."
 
-            show bird happy
-            "As we get closer, I see Snake grimace."
+            show fleur happy
+            "As we get closer, I see Zuru grimace."
 
-            q "Ah, Commander Snake. Your ugly face is always a sight for sore eyes."
-            s "I've no time for your banter for your banter, Bird."
+            q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes."
+            s "I've no time for your banter for your banter, Fleur."
 
-            "I lock eyes with Bird, and her face hardens for just a second."
+            "I lock eyes with Fleur, and her face hardens for just a second."
             "Oh, rats. I think she recognizes me."
 
             b "Why, I had no idea you were in good company with fugitives. Fitting."
-            mc "Yeah, you'd never expect Commander Snake to commit tax fraud, huh?"
+            mc "Yeah, you'd never expect Commander Zuru to commit tax fraud, huh?"
             s "Cease. I'm not aware of any crimes this girl has committed outside of our land, but she's helping me avenge my father."
             s "Or rather she's a 'key witness in an ongoing murder case' in your bureaucratic terms."
             b "I never figured you one to even know words that long."
@@ -525,14 +526,14 @@ label day2b:
 
     mc: "Ok, so, we're at her house. What's the plan here? Wait around the corner and beat her up when she gets home from work?"
     s: "An eye for an eye."
-    "Snake turns her gaze to the eggs."
+    "Zuru turns her gaze to the eggs."
     "Oh. The plan is infanticide."
     "Ok, I'm not about to go from alleged to {i}actual{/i} murderer. I gotta get out--"
     s: "Stop glancing around and dragging your feet. Revenge is our singular goal."
     mc: "O-oh, I just... uh..."
     mc: "Still... miss him, you know?"
 
-    "Snake's expression softens."
+    "Zuru's expression softens."
     s: "I... apologize for my roughness. I have... also been affected by his passing."
     s: "We'll turn these eggs into blueberry muffins, just like he would've wanted, right?"
     mc: "Y-yeah, for sure."
@@ -540,7 +541,7 @@ label day2b:
     scene bg birdnest
     with fade
 
-    "Snake snatches the eggs, cracks them open, then carefully dumps their contents into a bottle."
+    "Zuru snatches the eggs, cracks them open, then carefully dumps their contents into a bottle."
     "She smiles at me, holding out the bottle of child juice."
     s: "Would you do the honors of separating the yolks from the whites?"
     mc: "Uh, maybe later. For now, let's get out here--"
@@ -555,7 +556,7 @@ label day2b:
     b: "Everyone is reserved the right to due process."
     b: "But considering what you've done here, I'm willing to skip the formalities."
 
-    "Bird draws her weapon."
+    "Fleur draws her weapon."
     s: "Finally ready to stop running, huh?"
     "The two begin their duel. It's fierce, but it doesn't look like either one of them is winning."
     menu:
@@ -577,12 +578,12 @@ label day2b:
             "Frantically looking around the area, I try to find anything heavy enough to deal some damage."
             "I settle on a rock about the size of my head."
             mc: "What am I even doing? I'm no fighter. The most fighting I've done in my life is killing unborn children for a chance at saving myself. I am not a good person"
-            "Snake, in the midst of battle notices your courage."
+            "Zuru, in the midst of battle notices your courage."
             s: "{i}Though not related by blood, She is risking her life for my father's sake all the same... she's such a good person...{/i}"
             "She feels a warm energy swell up inside of her, and summons new strength."
-            "She manages to overpower Bird, knocking her to the ground. Coincidentally, right at me feet."
+            "She manages to overpower Fleur, knocking her to the ground. Coincidentally, right at me feet."
             mc: "Jesus, I can not hold this rock any longer...!"
-            "I drop the rock. Coincidentally, right onto Bird's head. With a squawk, she stops moving."
+            "I drop the rock. Coincidentally, right onto Fleur's head. With a squawk, she stops moving."
             mc: "Oh my god."
 
             s: "I..."
@@ -591,7 +592,7 @@ label day2b:
             mc: "No, uh, if the police come, we'll say you did that."
             s: "You are too kind. But it was you who dealt the final blow."
             mc: "No really, I insist."
-            "Snake laughs."
+            "Zuru laughs."
             s: "Beat at ease. I will formally acquit you of your crimes when we get back."
             s: "But first..."
             mc: "But first?"
