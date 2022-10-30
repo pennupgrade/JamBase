@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameMusic.Play()
+        gameMusic.Play();
         aaron_Hurt = aH;
         sprite = deathScreen.GetComponent<SpriteRenderer>();
         playerLives = playerStartlives;
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         else
         {
             //GG
-            //gameMusic.Stop()
+            gameMusic.Stop();
             if (!startAnim)
             {
                 startAnim = true;
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
                 playerLives = playerStartlives;
 
-                //gameMusic.Play()
+                gameMusic.Play();
                 gameOver = false; //it is 3 am and i think i am losing it wowza
             }
 
