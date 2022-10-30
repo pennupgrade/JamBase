@@ -9,7 +9,7 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private int damage;
 
-
+  
      [Header ("Attack Parameters")]
     [SerializeField] private float colliderDistance;
     

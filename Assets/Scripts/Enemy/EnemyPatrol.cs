@@ -9,7 +9,7 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private Transform rightEdge;
 
     [Header ("Enemy")]
-    [SerializeField] private Transform enemy;
+    [SerializeField] public Transform enemy;
 
     [Header ("Movement Parameters")]
     [SerializeField] private float speed;
@@ -23,27 +23,58 @@ public class EnemyPatrol : MonoBehaviour
     [Header ("Animator")]
     [SerializeField] private Animator anim;
 
+    [Header("Target Behavior")]
+    [SerializeField] private GameObject targetLight;
+    private bool isSeeking;
+
+
     private void Awake(){
         initScale = enemy.localScale;
     }
 
 
     private void Update(){
-        if(movingLeft){
-            if(enemy.position.x >= leftEdge.position.x){
-                MoveInDirection(-1);
+        if (!isSeeking) {
+            if (movingLeft)
+            {
+                if (enemy.position.x >= leftEdge.position.x)
+                {
+                    MoveInDirection(-1);
+                }
+                else
+                {
+                    DirectionChange();
+                }
             }
-            else{
-                DirectionChange();
-            }
-        } else{
-             if(enemy.position.x <= rightEdge.position.x){
-                MoveInDirection(1);
-            } else{
-                DirectionChange();
+            else
+            {
+                if (enemy.position.x <= rightEdge.position.x)
+                {
+                    MoveInDirection(1);
+                }
+                else
+                {
+                    DirectionChange();
+                }
             }
         }
-        
+        else
+        {
+            while (enemy.position.x != targetLight.GetComponent<Transform>().position.x)
+            {
+
+            }
+            if (targetLight.GetComponent<Transform>().position.x < enemy.position.x)
+            {
+                this.MoveInDirection(-1);
+            }
+            else
+            {
+                this.MoveInDirection(1);
+            }
+        }
+
+
     }
     
     private void MoveInDirection(int _direction){
@@ -67,5 +98,18 @@ public class EnemyPatrol : MonoBehaviour
 
     private void onDisable(){
         anim.SetBool("moving", false);
+    }
+
+    public void startSeeking(GameObject l)
+    {
+        Debug.Log("Seekin babyyy");
+        isSeeking = true;
+        anim.SetBool("moving", true);
+        targetLight = l;
+    }
+
+    public bool enemyIsSeeking()
+    {
+        return isSeeking;
     }
 }
