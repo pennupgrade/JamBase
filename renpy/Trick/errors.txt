@@ -23,4 +23,4 @@ File "game/script.rpy", line 7: unexpected EOF while parsing
           ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Oct 30 01:15:54 2022
+Sun Oct 30 02:09:26 2022

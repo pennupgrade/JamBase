@@ -1,10 +1,10 @@
 # Set Up
 default persistent.lastending = ""
-default persistent.badendreached = False;
-default persistent.zuruendreached = False;
-default persistent.fleurendreached = False;
-default persistent.haremendreached = False;
-default persistent.pairendreached = False;
+default persistent.badendreached = False
+default persistent.zuruendreached = False
+default persistent.fleurendreached = False
+default persistent.haremendreached = False
+default persistent.pairendreached = False
 
 transform common (x=960):
     yanchor 1.0 subpixel True 
@@ -58,7 +58,7 @@ label start:
 
         jump day1b
 
-    elif persistent.lastending == "4" or persistent.lastending == "5": # reached BAD END or GOOD END
+    elif persistent.lastending == "4" or persistent.lastending == "5" or persistent.lastending == "6":
 
         if persistent.lastending == "4":
             
@@ -67,9 +67,54 @@ label start:
 
         elif persistent.lastending == "5":
 
-            # ?
+            if persistent.haremendreached or persistent.pairendreached:
 
-        # jump -> start of a new day (try to get a good end)
+                centered "After reaching these endings, I wonder if things would be different if I acted differently."
+                
+            else:
+
+                centered "I still haven't found out who killed Zuru's father..."
+
+        elif persistent.lastending == "6":
+
+            centered "After reaching such a perfect ending, I wonder if things would be different if I acted differently."
+
+        jump day0a
+
+    return
+
+label day0a:
+
+    scene bg cage dark with hpunch
+    show guard angry
+
+    q "Hey- Wake up!"
+    q "We're here."
+
+    mc "You b-bastard!"
+    "{i}I really want to punch this guy."
+    "As I violently shook within the cage, the covering slipped off."
+
+    q "What?"
+
+    mc "Let's cut to the chase."
+    mc "I'm just looking for the other endings I want to reach~"
+
+    q "S-so what are you planning on doing?"
+
+    menu:
+
+        "I will lead an enraged Zuru to ruin Fleur's beloved eggs!":
+
+            jump day2b
+
+        "I will use Fleur's goodwill to take {i}care{/i} of Zuru~":
+
+            jump day3
+
+        "I want to find out who killed Zuru's father.":
+
+            jump day3b
 
     return
 
@@ -177,6 +222,8 @@ label day0:
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
 
+    centered "BAD END REACHED: Down The Hatch"
+    centered "If I knew what was going to happen to me, perhaps I could've prevented it."
     $ persistent.lastending = "0"
     return
 
@@ -358,7 +405,8 @@ label day1:
 
     "Guess this really is farewell once again."
     "Hope her stomach acids end my pain quickly-"
-    
+
+    centered "BAD END REACHED: Out of the Frying Pan, Into the Fire"
     $ persistent.lastending = "1"
     return
 
@@ -399,7 +447,7 @@ label day1b:
     q "I guess..."
 
     hide guard with moveoutright
-    show zuru happy at moveinleft
+    show zuru happy at common
 
     mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
     s "Tell me WHAT?"
@@ -535,7 +583,7 @@ label day1c:
         # choice 2-
         # should end with the mc & snake approaching bird & recruiting bird
 
-    show zuru happy with moveinleft
+    show zuru happy at common
 
     s "Well, here we are. Let's do this quickly, I'd... rather not spend too much time here."
 
@@ -670,7 +718,8 @@ label day2:
 
         # choice 2-
         # should end with the mc & snake approaching snake & recruiting snake
-        "Look how she weeps"
+        "Look how she weeps":
+
             b "She does not weep? I see no tears in her eyes."
             mc "Peer beyond her mask of stone"
             mc "..."
@@ -817,7 +866,7 @@ label day2b:
             scene black
             with fade
 
-            centered "GOOD END REACHED: SSSSSSLIPPED AWAY WITH ZURU"
+            centered "GOOD END REACHED: SSSSSSSlipped Away With Zuru"
             $ persistent.lastending = "5"
             $ persistent.zuruendreached = True
 
@@ -914,8 +963,10 @@ label day3:
     b "I am but a humble messenger for the hammer of justice"
     scene black
     with fade
-    
-    #Whichever ending this
+
+    centered "GOOD END REACHED: Courted Fleur"
+    $ persistent.lastending = "5"
+    $ persistent.fleurendreached = True
 
     # b "KISS ME" mAssive  makeout scene xp
 
@@ -957,15 +1008,15 @@ label day3b:
     scene black
     with fade
 
-    centered "GOOD END REACHED: KISS KISS FALL IN LOVE"
+    centered "GOOD END REACHED: Kiss Kiss Fall In Love"
     $ persistent.lastending = "6"
     $ persistent.haremendreached = True
 
     scene black
     with fade
 
-    centered "GOOD END REACHED: IN A MOUSE'S NATURE"
-    $ persistent.lastending = "7"
+    centered "GOOD END REACHED: In a Mouse's Nature"
+    $ persistent.lastending = "6"
     $ persistent.pairendreached = True
 
     return
