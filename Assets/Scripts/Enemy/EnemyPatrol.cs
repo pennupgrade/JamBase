@@ -63,7 +63,8 @@ public class EnemyPatrol : MonoBehaviour
         {
             if (enemy.position.x <= targetLight.GetComponent<Transform>().position.x + 0.5 && enemy.position.x > targetLight.GetComponent<Transform>().position.x - 0.5) {
                     Debug.Log("Turn off");
-                    targetLight.GetComponent<LightAlert>().turnOn();
+                    targetLight.GetComponent<LightAlert>().turnOff();
+                targetLight.GetComponent<LightAlert>().toggleLightHasFinder();
                     this.gameObject.SetActive(false);
             } else {
                 if (targetLight.GetComponent<Transform>().position.x > enemy.position.x)

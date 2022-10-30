@@ -199,7 +199,7 @@ MonoBehaviour:
   speed: 2
   idleDuration: 1
   anim: {fileID: 7160876262796579323}
-  targetLight: {fileID: 0}
+  targetLight: {fileID: 7160876262625307122}
 --- !u!1 &7160876262625307122
 GameObject:
   m_ObjectHideFlags: 0

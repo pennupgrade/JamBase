@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightAlert : MonoBehaviour
 {
     private bool isOn;
+    private bool hasFinder;
     [SerializeField] KeyCode onKey;
     // Start is called before the first frame update
     void Start()
@@ -22,25 +23,31 @@ public class LightAlert : MonoBehaviour
 
     public void turnOn()
     {
-        isOn = !isOn;
+        isOn = true;
         if (isOn)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
-        else {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        }
         
     }
 
-    //public void turnOff()
-    //{
-    //    isOn = false;
-    //    gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-    //}
+    public void turnOff()
+    {
+        isOn = false;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+    }
 
     public bool lightIsOn()
     {
         return isOn;
+    }
+
+    public void toggleLightHasFinder()
+    {
+        hasFinder = !hasFinder;
+    }
+
+    public bool getLightHasFinder() {
+        return hasFinder;
     }
 }

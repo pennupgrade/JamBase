@@ -19,7 +19,7 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private LayerMask groundLayer; 
     [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private PlayerMovement p; 
+    private bool canSeePlayer;
     private EnemyPatrol enemyPatrol;
     private float cooldownTimer = Mathf.Infinity;
     private Health playerHealth;
@@ -68,7 +68,11 @@ public class MeleeEnemy : MonoBehaviour
             playerHealth = hit.transform.GetComponent<Health>();
         }
 
-        return hit.collider != null && !p.getIsHiding();
+        return hit.collider != null && !canSeePlayer;
+    }
+
+    void CanSee(bool seeablePlayer) {
+        canSeePlayer = seeablePlayer;
     }
 
     private void OnDrawGizmos(){
