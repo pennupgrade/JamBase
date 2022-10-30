@@ -518,11 +518,12 @@ label day1b:
 
             mc "HEY EVERYONE."
             mc "Before you all ruffle your feathers with some minor things you {i}think{/i} I did."
-            mc "I've just stumbled upon an even more heinous crime: {i}MURDER{/i}."
+            mc "I've just stumbled upon an even more heinous crime: {i}MURDER{/i}." with hpunch
 
             q "GAASPPPP."
             q2 "hUUUH??"
 
+            show fleur angry with hpunch
             b "Quiet in the court!"
             
             q "A what? Murder? Noooooo."
@@ -532,9 +533,9 @@ label day1b:
             "If Fleur isn't caving, I'll keep pushing it."
             "I'm sure if I stall long enough, perhaps Zuru might even come get me~"
 
-            mc "I can show you the PROOOOOOF."
+            mc "I can show you the PROOOOOOF." with hpunch
 
-            q "PROOOOOOOF?!"
+            q "PROOOOOOOF?!" with hpunch
             "This crowd is really excited. They love sure love to heckle."
             q "Motion to hear this heinous crime?!"
             q2 "Seconded!"
@@ -544,8 +545,8 @@ label day1b:
             b "Fine. Motion to investigate this new, so-called, crime? All in fa-"
             
             q "AYYYYYEE~"
-            a2 "AYE!"
-            mc "LET'S GOOOOOOOOO!"
+            q2 "AYE!"
+            mc "LET'S GOOOOOOOOO!" with hpunch
 
             b "...Looks like that was unanimous. Alright. I will take this tiny mouse... and we will be back."
 
@@ -554,12 +555,12 @@ label day1b:
         "{i}(I can press a little more!)":
 
             mc "H-hey, you want to know who is your father's real killer, right?"
+            show zuru happy at common
             "Zuru perks up."
             s "Of course."
 
             mc "If you take me to the crime scene, I can point out which way they went."
             "Zuru ponders for a moment."
-            s "Fine. Come with me."
             s "Sure, come with me."
 
             jump day1c
@@ -624,7 +625,7 @@ label day1c:
             q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes--"
             "Zuru aims a devastating blow at the bird's head."
             q "Shown your true colors, huh?"
-            s "Shut up Fleur! I'll turn you into poultry!"
+            s "Shut up Fleur! I'll turn you into poultry!" with vpunch
             b "And I'll turn you in to law enforcement! See you in court!"
             "Fleur flies high, out of the reach of the trees, and back towards the clear"
             s "Argh!"
@@ -645,7 +646,7 @@ label day1c:
             hide zuru with moveoutright
             "As Zuru walks off, I hear her mutter something about the guards roughing me up a little too hard."
             "She takes a big breath"
-            s "EXCUSE ME! WE HAVE A FEW QUESTIONS!"
+            s "EXCUSE ME! WE HAVE A FEW QUESTIONS!" with hpunch
 
             "The bird is clearly startled, and flies into a tree."
             mc "Ouch. That probably hurt."
@@ -962,22 +963,22 @@ label day3:
     mc "Goodbye Zuru."
     s "What are you talking about-"
     "I begin to scream at the top of my lungs."
-    mc "FLEUR!!!!! RUN!!!!!!"
+    mc "FLEUR!!!!! RUN!!!!!!" with hpunch
 
     show zuru angry at centerright
 
     s "What are you-"
-    mc "THE SERPENTINE MAIDEN! NAY! THE MONSTER! THE DEVIL"
+    mc "THE SERPENTINE MAIDEN! NAY! THE MONSTER! THE DEVIL" with hpunch
     b "Mouse?!"
     "Fleur's footfalls hasten"
-    mc "PLEASE! RUN! I MAY GO THE WAY HER FATHER WENT, BUT YOU CAN STILL SAVE YOURSELF"
+    mc "PLEASE! RUN! I MAY GO THE WAY HER FATHER WENT, BUT YOU CAN STILL SAVE YOURSELF" with hpunch
     s "My father? What are you-"
 
     show fleur angry at centerleft
 
-    mc "FLEUR! STAY BACK!"
+    mc "FLEUR! STAY BACK!" with hpunch
     b "MOUSE! What has the monster done to you?!"
-    mc "JUST RUN"
+    mc "JUST RUN" with hpunch
 
     show fleur angry with moveinleft
 
@@ -986,7 +987,7 @@ label day3:
     b "Her."
     b "Down."
     "Zuru looks at me in shock and despair. I sneak a grin before turning to my faux tears."
-    b "YOU WILL DO NO FURTHER HARM ANYMORE INNOCENTS"
+    b "YOU WILL DO NO FURTHER HARM ANYMORE INNOCENTS" with hpunch
     "Zuru meets my gaze. She's crying."
     s "Why you-"
     "There is a flash; the sound of a fleshy sploch. When I open my eyes, Zuru's head lies at my feet."
@@ -1017,7 +1018,7 @@ label day3b:
 
     scene bg crimescene with fade
     show fleur happy at centerleft
-    show zuru neutral at centerright
+    show zuru happy at centerright
 
     mc "Have you two found anything of worth?"
 
@@ -1048,9 +1049,9 @@ label day3b:
     s "Wow. That's pretty amazing. Please do so! Those journals may have something important in them."
     b "Gladly. Hear, please allow me"
     "Fleur tenderly cups Zuru's ears. I watch silently for a moment before realizing what is to come."
-    b "SCRAAAAAWWWWW"
+    b "SCRAAAAAWWWWW" with hpunch
     "The air erupts into daggers. I clutch at my mouse ears in agony."
-    mc "HEY! A WARNING WOULD BE NICE NEXT TIME!"
+    mc "HEY! A WARNING WOULD BE NICE NEXT TIME!" with vpunch
 
     show fleur happy at centerleft
 
@@ -1107,7 +1108,14 @@ label day3b:
             mc "He's the only other character sprite in the game and all the devs are really tired and want to go to sleep"
             b "What."
             mc "I mean...uh...the guard would have been in the closest proximity to your father most of the time"
+
+            scene black with fade
+            show guard evil with moveinbottom
             "Eh not my best work"
+
+            scene bg crimescene with fade
+            show fleur happy at common
+
             b "Hmm...you're right"
             "Holy shit she bought it"
             "A screech is heard above us followed by the flapping of wings."
@@ -1122,8 +1130,10 @@ label day3b:
             "Reach into my pockets and pull out Fleur's wallet."
             mc "No...thank you."
 
+            scene black with fade
+
             centered "GOOD END REACHED: In a Mouse's Nature"
-            $ persistent.lastending = "7"
+            $ persistent.lastending = "6"
             $ persistent.pairendreached = True
 
         "She's having a rough time.":
@@ -1200,8 +1210,5 @@ label day3b:
             centered "GOOD END REACHED: Kiss Kiss Fall In Love"
             $ persistent.lastending = "6"
             $ persistent.haremendreached = True
-
-    scene black
-    with fade
     
     return
