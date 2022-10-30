@@ -1,10 +1,10 @@
 ﻿# Set Up
 default persistent.lastending = ""
-default persistent.badendreached = False;
-default persistent.zuruendreached = False;
-default persistent.fleurendreached = False;
-default persistent.haremendreached = False;
-default persistent.pairendreached = False;
+default persistent.badendreached = False
+default persistent.zuruendreached = False
+default persistent.fleurendreached = False
+default persistent.haremendreached = False
+default persistent.pairendreached = False
 
 transform common (x=960):
     yanchor 1.0 subpixel True 
@@ -26,9 +26,6 @@ transform centerright:
     common(1280)
 
 image black = "#000000"
-
-# GUI
-define gui.text_font = "gui/font/OpenSans-Medium.ttf"
 
 # Variables
 init python:
@@ -58,23 +55,21 @@ label start:
 
         jump day1b
 
-    elif persistent.lastending == "4" # BAD END
-        or persistent.lastending == "5" # GOOD END 
-        or persistent.lastending == "6": # TRUE END
+    elif persistent.lastending == "4" or persistent.lastending == "5" or persistent.lastending == "6":
 
-        if persistent.lastending == "4":
+        if persistent.lastending == "4": # BAD END
             
             centered "That last death was much too brutal. I should've known how to prevent it."
             centered "I'll do it right this time around."
 
-        elif persistent.lastending == "5":
+        elif persistent.lastending == "5": # GOOD END
 
             if persistent.haremendreached or persistent.pairendreached:
                 centered "With the story wrapped up, I wonder what else would've happened if I made different choices."
             else:
                 centered "Perhaps I ought to find out who really killed Zuru's father."
 
-        elif persistent.lastending == "6":
+        elif persistent.lastending == "6": # TRUE END
 
             centered "With the story wrapped up, I wonder what else would've happened if I made different choices."
 
@@ -103,19 +98,16 @@ label day0a:
 
     menu:
 
-        "I'm going to get an enraged Zuru to break some eggs!"
-        if not persistent.zuruendreached or not persistent.badendreached:
+        "I'm going to get an enraged Zuru to break some eggs!" if not persistent.zuruendreached or not persistent.badendreached:
 
             "...and maybe get her to fall in love with me~"
             jump day2b
 
-        "I ought to get Fleur to take care of Zuru for me."
-        if not persistent.fleurendreached:
+        "I ought to get Fleur to take care of Zuru for me." if not persistent.fleurendreached:
 
             jump day3
 
-        "I still haven't found out who killed Zuru's father..."
-        if not persistent.haremendreached or not persistent.pairendreached:
+        "I still haven't found out who killed Zuru's father..." if not persistent.haremendreached or not persistent.pairendreached:
 
             jump day3b
         
@@ -223,6 +215,9 @@ label day0:
             "Guess this really is farewell."
             "Hope her stomach acids end my pain quickly-"
 
+    centered "BAD END REACHED: Down The Hatch"
+    centered "Perhaps this would've been different had I known what was going to happen."
+    centered "I would do anything not to relive this day."
     $ persistent.lastending = "0"
     return
 
@@ -446,8 +441,8 @@ label day1b:
     q "I guess..."
 
     hide guard with moveoutright
-    show zuru happy at moveinleft
-
+    show zuru happy at common
+    
     mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
     s "Tell me WHAT?"
     "This snake lady better hold her tears better this time. I am at the end of my patience too."
@@ -885,7 +880,7 @@ label day2b:
             scene black
             with fade
 
-            centered "GOOD END REACHED: SSSSSSLIPPED AWAY WITH ZURU"
+            centered "GOOD END REACHED: SSSSSSlipped Away With Zuru"
             $ persistent.lastending = "5"
             $ persistent.zuruendreached = True
 
@@ -945,7 +940,7 @@ label day3b:
     with fade
 
     centered "GOOD END REACHED: IN A MOUSE'S NATURE"
-    $ persistent.lastending = "7"
+    $ persistent.lastending = "6"
     $ persistent.pairendreached = True
 
     return

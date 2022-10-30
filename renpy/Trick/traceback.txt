@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 386, in script
-    mc "Hey bestie Zuru, before you say anything: let me tell you everything about your dad."
+  File "game/script.rpy", line 449, in script
+    mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
 AttributeError: 'NoneType' object has no attribute 'style'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 386, in script
-    mc "Hey bestie Zuru, before you say anything: let me tell you everything about your dad."
+  File "game/script.rpy", line 449, in script
+    mc "Hey bestie Zuru, before you say anything... Let me tell you everything about your dad."
   File "C:\Users\fayef\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\fayef\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
@@ -55,4 +55,4 @@ AttributeError: 'NoneType' object has no attribute 'style'
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Trick 1.0
-Sun Oct 30 00:08:34 2022
+Sun Oct 30 01:24:09 2022
