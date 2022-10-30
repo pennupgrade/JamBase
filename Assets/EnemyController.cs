@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
     [SerializeField] GameObject light1;
     [SerializeField] GameObject enemy1;
+    private Queue<GameObject> enemyQueue;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyQueue = new Queue<GameObject>();
     }
 
     // Update is called once per frame
