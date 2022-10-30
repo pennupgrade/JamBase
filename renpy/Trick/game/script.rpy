@@ -1,5 +1,10 @@
 ﻿# Set Up
 default persistent.lastending = ""
+default persistent.badendreached = False;
+default persistent.zuruendreached = False;
+default persistent.fleurendreached = False;
+default persistent.haremendreached = False;
+default persistent.pairendreached = False;
 
 transform common (x=960):
     yanchor 1.0 subpixel True 
@@ -45,13 +50,26 @@ label start:
 
         jump day0
 
-    elif persistent.lastending == "0":
+    elif persistent.lastending == "0": # finished day 0
 
         jump day1
 
-    elif persistent.lastending == "1":
+    elif persistent.lastending == "1": # finished day 1
 
         jump day1b
+
+    elif persistent.lastending == "4" or persistent.lastending == "5": # reached BAD END or GOOD END
+
+        if persistent.lastending == "4":
+            
+            centered "That last death was much too brutal. I should've known how to prevent it."
+            centered "I'll do it right this time around."
+
+        elif persistent.lastending == "5":
+
+            # ?
+
+        # jump -> start of a new day (try to get a good end)
 
     return
 
@@ -563,7 +581,8 @@ label day1c:
             s "We can talk about that another time. Right now, it is time to avenge my father--"
             s "-- and your instructor."
             mc "Ah."
-            # jump to nest
+
+            jump day2b
 
         "I'm having trouble remembering... maybe that girl over there knows something?":
 
@@ -571,7 +590,8 @@ label day1c:
             hide zuru with moveoutright
             "As Zuru walks off, I hear her mutter something about hitting me a little too hard."
 
-            show fleur happy
+            show fleur happy at centerleft
+            show zuru happy at centerright
             "As we get closer, I see Zuru grimace."
 
             q "Ah, Commander Zuru. Your ugly face is always a sight for sore eyes."
@@ -589,7 +609,8 @@ label day1c:
             b "..."
             b "{i}Sighs{/i} Very well, I'll aid you."
             b "I didn't see anything myself, but you'll probably have better luck with me helping you ask around."
-            # jump to something
+
+            jump day3b
 
     return
 
@@ -706,7 +727,9 @@ label day2b:
     s "Finally ready to stop running, huh?"
     "The two begin their duel. It's fierce, but it doesn't look like either one of them is winning."
     menu:
+
         "I'm out of here!":
+
             "I take a few cautious steps back."
             mc "I'm gonna leave you two to it..."
             s "What are you doing!? Think of him! Think of vengeance."
@@ -719,8 +742,12 @@ label day2b:
             scene black
             with fade
 
+            centered "BAD END REACHED: Mass Manslaughter"
+            $ persistent.lastending = "4"
+            $ persistent.badendreached = True
 
         "Flying is weak to rock!":
+
             "Frantically looking around the area, I try to find anything heavy enough to deal some damage."
             "I settle on a rock about the size of my head."
             mc "What am I even doing? I'm no fighter. The most fighting I've done in my life is killing unborn children for a chance at saving myself. I am not a good person"
@@ -747,6 +774,13 @@ label day2b:
 
             "I make my way back to the snake village a free woman."
 
+            scene black
+            with fade
+
+            centered "GOOD END REACHED: SSSSSSLIPPED AWAY WITH ZURU"
+            $ persistent.lastending = "5"
+            $ persistent.zuruendreached = True
+
     return
 
 label day3:
@@ -756,5 +790,54 @@ label day3:
     # TODO: the last time mc arrives at the cage with the bird
     # should have the bird kill the snake (after seeing the snake break their eggs_)
     # should end with bird killing snake
+
+    return
+
+label day3b:
+
+    # TODO: both zuru and fleur work together to discover the true culprit of the case
+    # you can either push them to get together (pairing end)
+    # and/or get them to fall in love with you (harem end)
+
+    scene black
+    with fade
+
+    "Clattering and banging sounded from around as Fleur and Zuru headed off in their directions, searching for evidence."
+
+    mc "Have you two found anything of worth?"
+
+    s "Not yet. Nature is too good at hiding things."
+    b "Almost like a treasure trove hidden for you to discover~!"
+
+    s "Ugh."
+    
+    scene bg crimescene with fade
+
+    "It's been awhile since we split up. We planned to reconvene about now-ish?"
+
+    show fleur happy at centerleft
+    show zuru happy at centerright
+
+    mc "Updates?"
+    b "Actually- Searching reminded me."
+    b "When I visited your father's residence some time ago, my birds picked up a journal that belonged to Zuru's late father."
+
+    show zuru sad at centerright
+    s "My father's journals?"
+    b "The piece has been " # something something - at the birdnest ????? they pick up the piece of evidence and FIND THE KILLER LETS GOOOOOOOOOOOOOOO
+    
+    scene black
+    with fade
+
+    centered "GOOD END REACHED: KISS KISS FALL IN LOVE"
+    $ persistent.lastending = "6"
+    $ persistent.haremendreached = True
+
+    scene black
+    with fade
+
+    centered "GOOD END REACHED: IN A MOUSE'S NATURE"
+    $ persistent.lastending = "7"
+    $ persistent.pairendreached = True
 
     return
