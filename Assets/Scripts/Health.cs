@@ -43,6 +43,7 @@ public class Health : MonoBehaviour
                     //GetComponentInParent<EnemyPatrol>().enabled = false;
                     //GetComponent<MeleeEnemy>().enabled = false;
                     dead = true;
+                    this.GetComponentInParent<EnemyController>().addScore();
                     parent.GetComponentInChildren<SpriteRenderer>().color = Color.gray;
                     parent.transform.position = Vector3.down;
                     Destroy(parent);

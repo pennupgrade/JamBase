@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         //Switchboard making sure the cooldown is not active and the player can attack 
 
         // check for melee
-        if (Input.GetKeyDown(KeyCode.M) && playerMovement.canAttack() && !playerHealth.isDead())
+        if (Input.GetKeyDown(KeyCode.M) && playerMovement.canAttack()) //&& !playerHealth.isDead())
         {
             RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.up, 0.1f, enemyLayer);
             if (raycastHit.collider != null)

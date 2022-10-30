@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] GameObject spawnCooldown;
     private Queue<GameObject> enemyQueue;
     private GameObject firstEnemy;
+    public int score; 
 
     // Start is called before the first frame update
     void Start()
@@ -75,5 +76,10 @@ public class EnemyController : MonoBehaviour {
 
     public void requeue(GameObject enemy) {
         enemyQueue.Enqueue(enemy);
+    }
+
+    public void addScore() {
+        score += 100;
+        Debug.Log(score);
     }
 }
