@@ -740,15 +740,19 @@ label day2:
             b "..wow"
             b "When did you get so poetic?"
             mc "I am merely describing what I see"
-            #have the bird blush 
+
+            show fleur blush at centerright
+
             b "Well...then it is only just that we help her"
-            #have snake appear on screen
+
+            show zuru happy at centerleft
+
             b "Madam...are you alright?"
             s "..."
             b "Madam?"
             s "...hm?"
             b "You seem troubled."
-            s "Do I?" #she should have a very neutral face
+            s "Do I?"
             mc "It's written all over your face"
             b "Y-yeah! It's so obvious."
             b "Anyone with even a modicum of emotional intelligence could tell that from a mile away"
@@ -760,7 +764,9 @@ label day2:
             mc "(into the misty eyes of-)"
             b "Into the misty eyes of her soul."
             "I roll my eyes"
-            #Snake blushes
+
+            show zuru blush at centerleft
+
             mc "Maiden. What troubles you?"
             s "My father..."
             s "He lays slain upon this very earth."
@@ -900,12 +906,16 @@ label day3:
     b "Oh my. What unspeakable things befell you here?"
     mc "I dare not speak of it."
     b "..."
-    #Sad birb face
+
+    show fleur sad at common
+
     mc "What is that look? Upon your face?"
     b "I just want to know what injustice has wrought."
     mc "That's what you say. But I see it in your eyes."
     b "M-m-my eyes?"
-    #Blush birb
+
+    show fleur blush at common
+
     mc "Behind your drive for justice, a fiery compassion burns even more brightly."
     b "W-what"
     mc "I see now."
@@ -918,10 +928,14 @@ label day3:
     mc "Emanate with warmth"
     b "Wh-where's all of this coming fro-"
     mc "You are...simply too radiant"
-    #Birb leaves
+
+    hide fleur with moveoutright
+
     b "Where are you going!"
     "I think she took the bait"
-    #Snek appears on screen
+
+    show zuru at common
+
     s "You!"
     mc "..."
     s "What happened? Last I saw you were swept up by one of the bird clan. Are you alright?"
@@ -949,17 +963,24 @@ label day3:
     s "What are you talking about-"
     "I begin to scream at the top of my lungs."
     mc "FLEUR!!!!! RUN!!!!!!"
-    #Snek shock
+
+    show zuru angry at centerright
+
     s "What are you-"
     mc "THE SERPENTINE MAIDEN! NAY! THE MONSTER! THE DEVIL"
     b "Mouse?!"
     "Fleur's footfalls hasten"
     mc "PLEASE! RUN! I MAY GO THE WAY HER FATHER WENT, BUT YOU CAN STILL SAVE YOURSELF"
     s "My father? What are you-"
-    #Shocked birb appear left
+
+    show fleur angry at centerleft
+
     mc "FLEUR! STAY BACK!"
     b "MOUSE! What has the monster done to you?!"
     mc "JUST RUN"
+
+    show fleur angry with moveinleft
+
     #Birb murder mode activated
     b "Put."
     b "Her."
@@ -971,7 +992,9 @@ label day3:
     "There is a flash; the sound of a fleshy sploch. When I open my eyes, Zuru's head lies at my feet."
     b "Mouse."
     mc "Y-you didn't leave me."
-    #Happy birb
+
+    show fleur happy at common
+
     b "I am but a humble messenger for the hammer of justice"
     scene black
     with fade
@@ -1004,7 +1027,9 @@ label day3b:
     b "Well at least your color looks better"
     s "Excuse me?"
     b "Your scales a so much more supple than before."
-    #Smile Birb
+
+    show fleur happy at centerleft
+
     s "You're imagining things."
     "Observed."
     mc "Come on you two. Updates?"
@@ -1015,7 +1040,9 @@ label day3b:
     s "My father's journals?"
 
     b "I could send for them."
-    #Smile snek
+    
+    show zuru happy at centerright
+
     s "You can?"
     b "Of course! I can emit a call at a high frequency to summon them"
     s "Wow. That's pretty amazing. Please do so! Those journals may have something important in them."
@@ -1024,7 +1051,9 @@ label day3b:
     b "SCRAAAAAWWWWW"
     "The air erupts into daggers. I clutch at my mouse ears in agony."
     mc "HEY! A WARNING WOULD BE NICE NEXT TIME!"
-    #neutral birb
+
+    show fleur happy at centerleft
+
     b "Oh right you're here too"
     "Also oberserved. Less amicably."
     s "How long until your birds arrive?"
@@ -1032,6 +1061,8 @@ label day3b:
     b "...in the mean time..."
     s "What in the mean time"
     #Blush birb
+    show fleur blush at centerleft
+
     b "M-maybe I could help groom you? I always love getting my feathers groomed. It's a good way to pass the time and it feels great."
     s "..."
     b "..."
@@ -1039,6 +1070,8 @@ label day3b:
     b "Right. You don't have any feathers."
     s "I will go meditate until your birds arrive."
     #snek leave
+    hide zuru with moveoutright
+
     b "O-okay then."
     "Fleur turns to me."
     b "Haha...she one frigid lady huh?"
@@ -1047,13 +1080,19 @@ label day3b:
 
         "Dude you're totally blowing it with her.":
             b "W-what?"
+
+            show fleur angry at common
             #Shocked birb
             b "What on Earth are you talking about"
             mc "It's clear as day. You like her."
             b "What?!"
+
+            show fleur blush at common
             #blush birb
             mc "And I say you have a shot with her too."
             "Fleur's expression straightens."
+
+            show fleur happy at common
             #neutral birb
             b "What do I have to do?"
             "Uh oh. I'm getting an idea."
@@ -1077,6 +1116,8 @@ label day3b:
             "She hugs me"
             b "Thank you"
             "As soon as the messenger lands on Fleur's shoulder, she takes off running towards Zuru"
+
+            hide fleur with moveoutleft
             #brib leaves
             "Reach into my pockets and pull out Fleur's wallet."
             mc "No...thank you."
@@ -1088,6 +1129,8 @@ label day3b:
         "She's having a rough time.":
             b "But I just want to help her."
             mc "I know that...I do too, but there's not much that we can do for her at this moment."
+
+            show fleur sad at common
             #Sad birb
             mc "Hey. Cheer up."
             mc "I know you mean well."
@@ -1106,11 +1149,16 @@ label day3b:
             mc "I finally see what you are."
             b "And what might that be?"
             mc "Radiant."
+
+            show fleur blush at common
             #Blush birb
             "A screech is heard above us followed by the flapping of wings."
             mc "Come. Take my hand. Your messenger arrives. Let us speak with Zuru."
             "She takes my hand."
             "We walk towards Zuru, fingers interlaced."
+
+            show fleur blush at centerright
+            show zuru happy at centerleft
             #Enter Neutral Snek
             mc "Madam. Your father's journal arrives."
             s "..."
@@ -1127,8 +1175,12 @@ label day3b:
             s "The Guard? I can't believe this."
             "Neither can I; this feels super contrived."
             s "The Guard has been the guard for our household ever since I was a little girl."
+
+            show zuru sad at centerleft
             #Sad Snek
             "Fleur looks at Zuru, the back at me."
+            
+            show fleur sad at centerright
             #Sad Birb
             b "Do something."
             "I sigh."
