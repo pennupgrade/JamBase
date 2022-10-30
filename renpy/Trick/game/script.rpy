@@ -355,7 +355,7 @@ label day1b:
     "Bruh."
 
     q "Oh yeah, let me me lift that for you."
-    scene bg cage light with easeinbottom
+    scene bg cage light with fade
     show guard angry at common
     q "Better?"
     "{i}(Not again...){/i}"
@@ -392,7 +392,7 @@ label day1b:
     mc "And you know the strolls he takes?"
     s "Mhm..."
 
-    scene bg cage light with easeinbottom
+    scene bg cage light with fade
     show zuru sad at common
 
     mc "Holy crap... I'm losing my voice..."
