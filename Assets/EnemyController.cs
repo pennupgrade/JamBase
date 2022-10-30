@@ -12,8 +12,8 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] GameObject leftSpawn;
     [SerializeField] GameObject rightSpawn;
     [SerializeField] GameObject player;
-    [SerializeField] GameObject spawnCooldown;
-    //[SerializeField] TextMesh ;
+    [SerializeField] int spawnCooldown;
+    [SerializeField] GameObject text;
     private Queue<GameObject> enemyQueue;
     private bool enemyQueued;
     private GameObject firstEnemy;
@@ -35,11 +35,12 @@ public class EnemyController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        text.GetComponent<TMPro.TextMeshProUGUI>().SetText("SCORE: " + score);
 
         timeCount += Time.deltaTime;
 
 
-        if (Mathf.FloorToInt(timeCount % 60) % 10 == 0) {
+        if (Mathf.FloorToInt(timeCount % 60) % 7 == 0) {
             if (!enemyQueued) {
                 int spawn = Random.Range(1, 3);
                 enemyQueued = true;

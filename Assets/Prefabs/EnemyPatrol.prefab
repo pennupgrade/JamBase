@@ -197,7 +197,7 @@ MonoBehaviour:
   rightEdge: {fileID: 1992067974}
   enemy: {fileID: 7160876262796579321}
   enemyObject: {fileID: 7160876261444753565}
-  speed: 2
+  speed: 3
   idleDuration: 0
   anim: {fileID: 7160876262796579323}
   targetLight: {fileID: 7160876262625307122}

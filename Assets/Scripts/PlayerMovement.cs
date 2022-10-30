@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
     
     //Defines when the player should be able to attack. Defined when the player is not moving.
     public bool canAttack(){
-        return ((horizontalInput == 0 && isGrounded()) || (!isGrounded() && !onWall()) && !isHiding);
+        return (!isHiding);
     }
 
     
