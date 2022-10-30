@@ -294,7 +294,7 @@ label day1:
     # TODO: the first time mc is brought to the bird court
     # should end with bird killing mc
 
-
+    
 
     
     $ persistent.day = 1
@@ -336,9 +336,42 @@ label day2:
     # they are investingating the scene together
     # should see the snake already at the scene as mc + bird approach
 
+    b "Uh"
+    b "What am I supposed to be looking at here."
+    mc "Why, this is the site of a heinous crime."
+    b "Heinous?"
+    mc "Oh yes. An act so wretched it would make your toes curl."
+    b "Hey watch it with the references to my feet. Also why are you talking like that?"
+    menu:
+        mc "A different writer is writing my dialogue now"
+            b "Oh I see so this is just a joke to you"
+        mc "This is how I always talk"
+            b "Don't play coy with me. Something's up"
+    mc "This is getting away from the point"
+    mc "Look over there!"
+    b "Huh"
+    
+    show snake sad at centerleft
+
+    mc "Peer upon thy serpentine maiden over yonder"
+    b "She seems nice enough. What about her?"
+    
+    menu:
         # choice 1-
         # should end with the mc framing the snake as the killer of her own father
-
+        mc "She killed her father here"
+            b "She WHAT"
+            mc "Don't let her distinguished appearnce fool you; she's a bona fide killer."
+            b "How could you have known this."
+            mc "I tried to stop her, but the venom in her eyes stopped me cold."
+            b "Dear god."
+            mc "All I could do was watch helplessly in light slowly leave the eyes of her father as she did the deed."
+            b "That's...unforgivable."
+            mc "More forgivable than...say...petty theft?"
+            b "Theft is nothing in the face of this atrocity"
+            "Score for me."
+            mc "Then I know just want to do"
+            jump day3
         # choice 2-
         # should end with the mc & snake approaching snake & recruiting snake
 
