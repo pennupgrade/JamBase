@@ -70,7 +70,7 @@ public class BossScript : MonoBehaviour
             }
             else
             {
-                int random = Random.Range(2, 5);
+                int random = Random.Range(0, 5);
                 if (random == 0)
                 {
                     Debug.Log("Laser");

@@ -11,13 +11,21 @@ public class GameManager : MonoBehaviour
 
     public GameObject GameOverPanel;
     public GameObject GameWonPanel;
+
+    IEnumerator waitEndScreen(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        GameOverPanel.SetActive(true);
+    }
+
     public void EndGame()
     {
         if(!gameHasEnded)
         {
             gameHasEnded = true;
             Debug.Log("Game Over!");
-            GameOverPanel.SetActive(true);
+            StartCoroutine(waitEndScreen(4f));
 
         }
     }
@@ -26,8 +34,8 @@ public class GameManager : MonoBehaviour
         if(!gameHasEnded)
         {
             gameHasEnded = true;
-            GameWonPanel.SetActive(true);
             Debug.Log("Game won!");
+            StartCoroutine(waitEndScreen(4f));
         }
     }
 

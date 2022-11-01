@@ -1396,7 +1396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5957781250574604413, guid: 21ef894eaecc97f408dd3158a6c92756, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 15.72
       objectReference: {fileID: 0}
     - target: {fileID: 5957781250574604413, guid: 21ef894eaecc97f408dd3158a6c92756, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1437,7 +1437,7 @@ PrefabInstance:
     - target: {fileID: 5957781250574604415, guid: 21ef894eaecc97f408dd3158a6c92756, type: 3}
       propertyPath: trickLaser
       value: 
-      objectReference: {fileID: 7917328244621888488, guid: 9616364c07c8afe44b6302038a8e126d, type: 3}
+      objectReference: {fileID: 131386832209108543, guid: 9616364c07c8afe44b6302038a8e126d, type: 3}
     - target: {fileID: 5957781250574604415, guid: 21ef894eaecc97f408dd3158a6c92756, type: 3}
       propertyPath: trickStaticLaser
       value: 
@@ -3146,7 +3146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1212315525
 MonoBehaviour:
@@ -5124,7 +5124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3419724437629347300, guid: 55dac7096de2d9949a69f7cf4c446faf, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3419724437629347300, guid: 55dac7096de2d9949a69f7cf4c446faf, type: 3}
       propertyPath: m_LocalPosition.x

@@ -276,8 +276,9 @@ public class PlayerScript : MonoBehaviour
                         recoil();
                         animator.SetBool("attackDown", true);
                         canInput = false;
+                        canAttack = false;
                         StartCoroutine(waitAttackInput(0.3f));
-                        StartCoroutine(waitAttackCooldown(0.75f));
+                        StartCoroutine(waitAttackCooldown(0.7f));
                     }
                     else if (attackDir != -2)
                     {
@@ -312,8 +313,9 @@ public class PlayerScript : MonoBehaviour
                             animator.SetBool("attackUp", true);
                         }
                         canInput = false;
+                        canAttack = false;
                         StartCoroutine(waitAttackInput(0.3f));
-                        StartCoroutine(waitAttackCooldown(0.75f));
+                        StartCoroutine(waitAttackCooldown(0.7f));
                     }
                 }
             }
