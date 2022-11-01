@@ -104,19 +104,20 @@ public class PlayerScript : MonoBehaviour
     public void getHit(float damage)
     {
         health -= damage;
+        body.AddForce(Vector3.up * damageForce, ForceMode2D.Impulse);
+        canInput = false;
+        hitbox.enabled = false;
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0.2f, 0.2f);
         if (health <= 0)
         {
+            StartCoroutine(waitColor(0.2f));
             die();
         }
         else
         {
-            body.AddForce(Vector3.up * damageForce, ForceMode2D.Impulse);
-            canInput = false;
-            hitbox.enabled = false;
-            this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0.2f, 0.2f);
             StartCoroutine(recoverInputHit(0.35f));
-            StartCoroutine(waitColor(0.2f));
             StartCoroutine(recoverHitboxHit(1f));
+            StartCoroutine(waitColor(0.2f));
         }
     }
 

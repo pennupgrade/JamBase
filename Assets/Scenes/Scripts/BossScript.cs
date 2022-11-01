@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
-    private float health = 700;
+    private float health = 600;
     private float timer;
     private float angle = 0;
     private bool dir = true;
@@ -37,11 +37,6 @@ public class BossScript : MonoBehaviour
         health -= damage;
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 1);
         StartCoroutine(waitColor(0.2f));
-        if (health <= 0)
-        {
-            animator.SetBool("dead", true);
-            isAlive = false;
-        }
     }
 
     // Start is called before the first frame update
@@ -54,12 +49,18 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= 0 && isAlive)
+        if (timer <= 0)
         {
-            if (health <= 450 && phase == 0)
+            if (health <= 0)
+            {
+                animator.SetBool("dead", true);
+                isAlive = false;
+            }
+            if (health <= 350 && phase == 0)
             {
                 phase = 1;
                 animator.SetBool("enraged", true);
+                timer = 2f;
             }
             if (moveCount <= 0)
             {
@@ -70,65 +71,71 @@ public class BossScript : MonoBehaviour
             }
             else
             {
-                int random = Random.Range(0, 5);
-                if (random == 0)
+                if (isAlive)
                 {
-                    Debug.Log("Laser");
-                    if (getIsEnraged())
+                    int random = Random.Range(0, 5);
+                    if (random == 0)
                     {
-                        int random2 = Random.Range(0, 3);
-                        if (random2 == 0)
+                        Debug.Log("Laser");
+                        if (getIsEnraged())
                         {
-                            trickLaserAttack();
+                            int random2 = Random.Range(0, 3);
+                            if (random2 == 0)
+                            {
+                                trickLaserAttack();
+                            }
+                            else
+                            {
+                                laserAttack();
+                            }
                         }
                         else
                         {
                             laserAttack();
                         }
+                        timer = 7;
                     }
-                    else
+                    else if (random == 1)
                     {
-                        laserAttack();
+                        Debug.Log("Spiral");
+                        spiralBubbleAttack();
+                        timer = 7;
                     }
-                    timer = 7;
-                }
-                else if (random == 1)
-                {
-                    Debug.Log("Spiral");
-                    spiralBubbleAttack();
-                    timer = 7;
-                }
-                else if (random == 2)
-                {
-                    Debug.Log("Layer");
-                    layerBubbleAttack();
-                    timer = 7;
-                }
-                else if (random == 3)
-                {
-                    Debug.Log("Combo");
-                    bubbleCombo();
-                    timer = 13;
-                }
-                else if (random == 4)
-                {
-                    Debug.Log("Radiance");
-                    if (getIsEnraged())
+                    else if (random == 2)
                     {
-                        int random2 = Random.Range(0, 2); 
-                        if (random2 == 0)
+                        Debug.Log("Layer");
+                        layerBubbleAttack();
+                        timer = 7;
+                    }
+                    else if (random == 3)
+                    {
+                        Debug.Log("Combo");
+                        bubbleCombo();
+                        timer = 13;
+                    }
+                    else if (random == 4)
+                    {
+                        Debug.Log("Radiance");
+                        if (getIsEnraged())
                         {
-                            trickTripleRadianceLaser();
-                        } else
+                            int random2 = Random.Range(0, 2);
+                            if (random2 == 0)
+                            {
+                                trickTripleRadianceLaser();
+                            }
+                            else
+                            {
+                                tripleRadianceLaser();
+                            }
+                        }
+                        else
                         {
                             tripleRadianceLaser();
                         }
-                    } else {
-                        tripleRadianceLaser();
+                        timer = 3f;
                     }
-                    timer = 3f;
+                    moveCount--;
                 }
-                moveCount--;
             }
         }
         timer -= Time.deltaTime;
@@ -420,11 +427,11 @@ public class BossScript : MonoBehaviour
         if (dir)
         {
             spiralBubbleAttack();
-            StartCoroutine(comboSpiral1(6));
+            StartCoroutine(comboSpiral1(4));
         } else
         {
             layerBubbleAttack();
-            StartCoroutine(comboSpiral2(6));
+            StartCoroutine(comboSpiral2(4));
         }
     }
 

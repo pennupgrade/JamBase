@@ -67,14 +67,14 @@ public class BubblePool : MonoBehaviour
                 int random = Random.Range(0, 5);
                 if (random == 0)
                 {
-                    bubbleInstance = Instantiate(trickPooledBubble);
+                    bubbleInstance = Instantiate(trickPooledBubble, this.gameObject.transform);
                 } else
                 {
-                    bubbleInstance = Instantiate(pooledBubble);
+                    bubbleInstance = Instantiate(pooledBubble, this.gameObject.transform);
                 }
             } else
             {
-                bubbleInstance = Instantiate(pooledBubble);
+                bubbleInstance = Instantiate(pooledBubble, this.gameObject.transform);
             }
             bubbleInstance.SetActive(false);
             bubbles.Add(bubbleInstance);
