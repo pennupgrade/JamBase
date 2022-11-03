@@ -4,7 +4,7 @@ Welcome, one and all to the first, official UPGRADE Game Jam! We are very please
 
 ## Description
 
-From 11 am 10/29 to 10:30 am 10/30, you are now tasked wi.th creating a game from scratch. The goal for this game jam is for enable everyone participating to put everything they've learned over the past couple of weeks in UPGRADE to use. 
+From 11 am 10/29 to 10:30 am 10/30, you are now tasked with creating a game from scratch. The goal for this game jam is for enable everyone participating to put everything they've learned over the past couple of weeks in UPGRADE to use. 
 It's ok for the game to be rough.
 It's ok for the game to be jank.
 It's preferable that the game doesn't brick our computers.
