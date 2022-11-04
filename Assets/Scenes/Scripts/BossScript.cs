@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
-    private float health = 600;
+    private float health = 500;
     private float timer;
     private float angle = 0;
     private bool dir = true;
@@ -56,7 +56,7 @@ public class BossScript : MonoBehaviour
                 animator.SetBool("dead", true);
                 isAlive = false;
             }
-            if (health <= 350 && phase == 0)
+            if (health <= 300 && phase == 0)
             {
                 phase = 1;
                 animator.SetBool("enraged", true);
