@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - floor
+  - player_attack
+  - player
+  - boss_attack
+  - boss
   layers:
   - Default
   - TransparentFX
